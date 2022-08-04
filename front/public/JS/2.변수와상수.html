@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+   <script type="text/javascript">
+     /*
+     
+        컨트롱+시프트+슬래시 : 범위 주석
+        p. 103
+            * 하나의 값만 저장 가능
+            * 상수명 혹은 변수명은 2개이상 선언 불가능 [ 이름 중복 불가능 ]
+                1.[tjsdjs] zldnjem qustnaud = rkqt
+                2.[호출] : 변수명
+   
+                1. 키워드 변수명 = 값
+            상수 : 고정된 수 [ 선언시 상수에 대입된 값은 추후에 변경할수 있다. ]
+                 1. const 변수명 = 값
+                 //상수의 키워드 : const
+            변수 : 변하는 수[ 선언시 변수]
+                1. let 변수명 = 값
+                //변수의 키워드 : iet
+            대입 연산자
+            =대입 [ 오른쪽에서 왼쪽으로 대입(저장)]
+            += [ 오른쪽 값을 더한 후에 ]
+            -= *= /= %=
+            증감 연산자
+             단계적인 증감에서 사용 [ 엘레베이터 , 시간 등등 ]
+              ++ : 1증가
+                ++변수 : 우선증가
+                변수++ : 후위증가
+              -- : 1감소
+                --변수 : 우선감소
+                변수-- : 후위감소
+     */
+     //1. 상수의 선언
+     const pi = 3.141592 // 1. 상수 선언
+     console.log( pi )   // 2. 상수 출력
+     /* pi = 10             //3.상수의 값 변경 [ 오류발생 : Assignment to constant variable. ]
+     console.log( pi ) */
+     
+     // 2. 변수의 선언
+     let pi2 = 3.141592             //1. 변수선언
+     console.log( "pi2 : " + pi2 ) //2. 변수 출력
+     
+     pi2 = 10                       //3. 변수의 값 변경
+     console.log( "pi2변경후 : " + pi2 ) //4. 값 변경후 출력
+     
+     //3. 대입연산자
+     let 변수1 = 3      //1.변수의 선언과 3 대입 = 초기값(처음에 들어가는 값)
+         console.log('변수1의 값 : ' + 변수1)
+     변수1 = 변수1 + 2   //2. 연산자가 2개 이상일경우 [사칙연산 2개이상 인식불가]
+         console.log('변수1의 2를 더한 후 : ' + 변수1)
+         //1. 변수1 + 2   : 5
+         //2. 변수1 = 5   : 대입
+   
+     //*활용 JS 변수에 저장된 HTML형식의 문자를 HTML출력
+   let list = ''   //1.변수의 선언과 ''공백 대입 [ 초기값 ]
+   list += '<ul>'    //2. 변수의 누적값 저장한다   list = list + '<ul>'
+   list += '<li>'      //3.
+   list += '<li>Hello</li>'
+   list += '</ul>'
+	   console.log(list)
+	   
+	document.write(list)
+	
+	//4. 증감연산자
+	let 변수2 = 3
+	   console.log( "변수2:" + 변수2 )  //3
+	   console.log( "변수2 우선증가:"+ (++변수2) )  //4  /증가후에 출력
+	   console.log( "변수3 후위증가:" + (변수2++) ) //4  /출력후에 증가
+	   console.log( "변수2:" + 변수2) //5
+	   
+	   console.log( "변수2:" + (--변수2) ) //4
+	   console.log( "변수2:" + (변수2--) ) //4
+	   console.log( "변수2:" + 변수2) //3
+	   //변수2 =변수2+1 vs 변수2 += 1 vs 변수++
+	   
+   
+   </script>
+   
+   
+</body>
+</html>
