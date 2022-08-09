@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+		<!-- css파일 불러오기 -->
+		<link href="9.중간과제3.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+		<h3> 회원가입 폼</h3>
+		<form>
+			<ul class="signupbox ">
+				<li>
+					<ul>
+						<li>아이디</li>
+						<li><input type="text"></li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>비밀번호</li>
+						<li><input type="password"></li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>비밀번호 확인</li>
+						<li><input type="password"></li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="col1">이름</li>
+						<li><input type="text"></li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="col1">이메일</li>
+						<li class="col2">
+								<input type="text">@
+							<select>
+								<option>직접입력</option>
+								<option>naver.com</option>
+								<option>nate.com</option>
+							</select>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="1">이메일 수신</li>
+						<li>
+							<input type="radio" name="reception">비수신
+							<input type="radio" name="reception">수신
+						</li>
+						
+					</ul>
+				</li>
+				
+				<li>
+					<ul class="cols">
+						<li class="col1">가입경로</li>
+						<li>
+							<input type="checkbox" name="signuproute">친구수신
+							<input type="checkbox" name="signuproute">인터넷검색
+							<input type="checkbox" name="signuproute" checked="checked">기타
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul class="cols">
+						<li class="col1 hello">인사말</li>
+						<li class="col2">
+							<textarea rows="10" cols="45"></textarea>
+						</li>
+					</ul>
+				</li>
+			
+				<div class="buttonbox">
+					<input type="submit" value="저장하기">
+					<input type="submit" value="취소하기">
+				</div>
+			
+		</form>
+		
+</body>
+</html>

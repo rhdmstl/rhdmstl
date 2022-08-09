@@ -38,47 +38,46 @@
                 변수-- : 후위감소
      */
      //1. 상수의 선언
-     const pi = 3.141592 // 1. 상수 선언
-     console.log( pi )   // 2. 상수 출력
-     /* pi = 10             //3.상수의 값 변경 [ 오류발생 : Assignment to constant variable. ]
-     console.log( pi ) */
+     const pi = 3.141592 		    // 1. 상수 선언
+     console.log( "pi : " + pi )   // 2. 상수 출력
+     // pi = 10             //3.상수의 값 변경 [ 오류발생 : Assignment to constant variable. ]
+     //console.log( pi ) 	//3.오류발생
      
      // 2. 변수의 선언
-     let pi2 = 3.141592             //1. 변수선언
-     console.log( "pi2 : " + pi2 ) //2. 변수 출력
-     
-     pi2 = 10                       //3. 변수의 값 변경
-     console.log( "pi2변경후 : " + pi2 ) //4. 값 변경후 출력
+     let pi2 = 3.141592             	  //1. 변수선언
+     console.log( "pi2 : " + pi2 ) 		  //2. 변수 출력
+     pi2 = 10                      		  //3. 변수의 값 변경
+     console.log( "pi2변경후 : " + pi2 )    //4. 값 변경후 출력
      
      //3. 대입연산자
-     let 변수1 = 3      //1.변수의 선언과 3 대입 = 초기값(처음에 들어가는 값)
+     let 변수1 = 3 		//1.변수의 선언과 3 대입 = 초기값(처음에 들어가는 값)
          console.log('변수1의 값 : ' + 변수1)
-     변수1 = 변수1 + 2   //2. 연산자가 2개 이상일경우 [사칙연산 2개이상 인식불가]
+     변수1 += 2   		//2. 연산자가 2개 이상일경우 [사칙연산 2개이상 인식불가]
          console.log('변수1의 2를 더한 후 : ' + 변수1)
          //1. 변수1 + 2   : 5
          //2. 변수1 = 5   : 대입
    
      //*활용 JS 변수에 저장된 HTML형식의 문자를 HTML출력
-   let list = ''   //1.변수의 선언과 ''공백 대입 [ 초기값 ]
-   list += '<ul>'    //2. 변수의 누적값 저장한다   list = list + '<ul>'
-   list += '<li>'      //3.
-   list += '<li>Hello</li>'
-   list += '</ul>'
-	   console.log(list)
+   		let list = ''		// 1. 변수의 선언과 ''공백 대입 [ 초기값 ]
+		list += '<ul>'		// 2. 변수의 누적 값 저장한다. 		list = list + '<ul>'
+		list +=  '<li>Hello</li>'
+		list +=  '<li>javascript</li>'
+		list += '</ul>'
+			console.log(list)
 	   
 	document.write(list)
 	
-	//4. 증감연산자
-	let 변수2 = 3
-	   console.log( "변수2:" + 변수2 )  //3
-	   console.log( "변수2 우선증가:"+ (++변수2) )  //4  /증가후에 출력
-	   console.log( "변수3 후위증가:" + (변수2++) ) //4  /출력후에 증가
-	   console.log( "변수2:" + 변수2) //5
-	   
-	   console.log( "변수2:" + (--변수2) ) //4
-	   console.log( "변수2:" + (변수2--) ) //4
-	   console.log( "변수2:" + 변수2) //3
-	   //변수2 =변수2+1 vs 변수2 += 1 vs 변수++
+	// 4. 증감연산자 
+		let 변수2 = 3		
+			console.log( "변수2:" + 변수2)	// 3 
+			console.log( "변수2 선위증가:" + (++변수2) ) // 4	// 증가후에 출력 
+			console.log( "변수2 후위증가:" + (변수2++) ) // 4	// 출력후에 증가
+			console.log( "변수2:" + 변수2) // 5
+			
+			console.log( "변수2 선위감소:" + (--변수2) )	// 4
+			console.log( "변수2 후위감소:" + (변수2--) )	// 4
+			console.log( "변수2:" + 변수2 ) // 3
+			// 변수2 = 변수2+1 vs 변수2 += 1  vs 변수++
 	   
    
    </script>

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/*
+	1. 식별자  2. 속성  3. 값 
+	식별자{ 속성명 = 값; }
+		식별자 종류 : 1. * 2. 태그 3. .class 4. #id
+		식별자 복수선택 : 식별자 , 식별자 , 식별자 {   } 
+		식별자의 하위식별자 : 상위식별자 하위식별자{  }
+	
+	display 
+		1. inline		한줄로 표시 [ 사이즈 적용x ]
+			* span , a , img 등 
+		2. block		한줄 차지 
+			* div , ul , li , p 등 
+		3. inline-block	한줄로 표시 [ 사이즈 적용o ]
+		4. none
+	
+*/
+
+*{ font-family: "굴림"; } /*글꼴*/
+h3{ text-align: center; } /*(내용) 가로정령*/
+.signupbox{
+		width: 600px;					/*가로길이*/
+		margin: 0 auto;					/*(박스) 가운데정렬*/
+		border-top: solid 2px red;		/*위쪽 테두리*/
+		border-bottom: solid 2px red;	/*아래쪽 테두리*/
+		padding: 30px;					/*안쪽 여백*/
+}
+
+li{ list-style-type: none; } /*list-style-type : 글머리 종류*/
+/* class가 cols라는 식별자 하위에 포함된 모든 li꾸미기 */
+.col li{ display: inline-block; }
+.col1{ width: 250px; height: 25px; }
+.col2 input{ width: 250px; height: 25px; }
+.cols{ padding: 5px; }
+.col2 select { width: 100px; height: 30px; }
+.hello{ vertical-align: top; }
+textarea { resize: none; }
+
+.buttonbox{
+		width: 600px;
+		margin: 0 auto;
+		text-align: right;
+}
+.buttonbox input{
+		padding: 10px 20px;
+		margin-top: 20px;
+}
