@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* css 기본 정렬 */
+*{ margin: 0; padding: 0; font-family: "맑은고딕" }
+a{ text-decoration: none; color: black; }
+a:hover{ order: #eeeeee }
+li{ list-style-type: none; }
+
+/*페이지 실제 사이즈*/
+.box{ width: 1200px; margin: 0 auto; position: relative; }
+
+/*header*/
+#header{ height: 100px; }
+.logo{ position: absolute; top: 20px; left: 20px; }
+.logo_impact{ color: blue; font-weight: bold; }
+.top_menu{position: absolute; right: 20px; top: 30px; }
+.top_menu li{ display: inline; margin-left: 20px; }
+
+/*메인이미지*/
+#sub_img{ text-align: center; }
+
+/*베너*/
+#banners{ height: 1200px; }
+
+.banner1{ 
+	float: left;
+}
+.banner2{
+	float: right;
+}	
+.col1{ float: right; width: 100px; margin-right:20px; }
+.col2{ float: left; width: 100px; margin-left: 20px; }
+
+
+
+
+/*푸터*/
+#footer{ 
+	clear: both; background-color: #292c32; color: white;
+	padding: 20px; height: 250px;
+}
+.ft_item{ float: left; width: 380px; margin-top: 50px; }
+.ft_item li{ display: inline; }
+.ft_item ul{ margin-bottom: 20px; }
+.ft_sns{ float: right; width: 370px; margin-top: 50px;  text-align: center; }
+.ft_sns{ margin-left: 10px; }
