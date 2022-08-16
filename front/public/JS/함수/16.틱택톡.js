@@ -34,19 +34,19 @@ function 버튼선택(i){
 		alert('안내) 이미 둔 자리입니다')
 		return
 	}
-}
+
 
 	document.getElementById(i).innerHTML = 'O'
 	게임상황[i] = 'O'
 	
-	if(게임결과( )){
-		alert('게임종료 승리 : ' + 승리)
-		return
+	if( 게임결과( ) ) { // 게임결과 함수에서 true가 리턴되면 
+		alert('게임종료 승리 : ' + 승리 )
+		return // 함수 강제 종료 
 	}
 	
 	
 	//난수발생
-	wile(true){
+	while(true){
 		let rand = Math.floor(Math.random()*9)
 		if(!중복검사(rand)){
 			document.getElementById(rand).innerHTML = 'X'
@@ -59,10 +59,11 @@ function 버튼선택(i){
 		alert('게임종료 승리 : ' + tmdfl)
 		return
 	}
+	}
 	
 	//현재의치에 알이 있는지 검사함수
 function 중복검사( i ){
-	if(게임사왕[i] != null){
+	if(게임상황[i] != null){
 		return true
 	}else{
 		return false
@@ -77,7 +78,7 @@ function 게임결과(){
 			return true
 		}
 	}
-}
+
 
 	//세로로 이기는 함수
 	for(let i = 0 ; i<=2 ; i++){
@@ -85,4 +86,5 @@ function 게임결과(){
 			승리 = 게임상황[i]
 			return true
 		}
+	}
 	}

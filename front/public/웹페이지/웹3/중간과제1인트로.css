@@ -16,8 +16,9 @@ li{ list-style-type: none; }
 .top_menu{position: absolute; right: 20px; top: 30px; }
 .top_menu li{ display: inline; margin-left: 20px; }
 
-/*메인이미지*/
+/*서브이미지*/
 #sub_img{ text-align: center; }
+
 .sub_text{
 	height: 400px;
 	padding-top: 150px;
@@ -34,6 +35,7 @@ sub_text p{
 	font-size: 30px;
 	color: white;
 }
+
 
 /*베너*/
 #banners{ height: 200px; }
