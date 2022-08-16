@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+   <script type="text/javascript">
+   
+// 문제 : prompt 함수로 금액 입력받아서 지폐세기 console에 결과출력
+  let 금액 = prompt('숫자 입력')
+  console.log('십만원권 : ' + parseInt((금액/100000)) +'장' )
+  금액-= parseInt(금액/100000)*100000
+  console.log('만원권 : ' + parseInt((금액/10000)) +'장' )
+  금액-= parseInt(금액/10000)*10000
+  console.log('천원권 : ' + parseInt((금액/1000)) +'장' )
+
+
+// 문제 : prompt 함수로 반지름 입력받아 원 넓이 출력 반지름 * 2* 3.14
+ let 숫자1 = prompt('반지름 입력')
+  console.log('원의 넓이 : ' +  (숫자1 * 숫자1  * 3.14  ) )
+
+
+  
+// 문제 : prompt 함수로 숫자를 입력받아 3의 배수인지 체크 true / false
+ let 숫자2 = prompt('정수 입력')
+  console.log('3의 배수 : ' +  (숫자2 %3==0) ) 
+
+
+
+
+// 문제 : prompt 함수로 숫자를 입력받아 홀짝 체크 홀true / 짝false
+ let 숫자3 = prompt('정수 입력')
+  console.log('홀짝 : ' +  (숫자3 %2==1) )
+
+
+
+
+// 문제 : prompt 함수로 두 실수를 입력받아 앞 실수의 값이 뒤 실수의 값의 몇 %인지 출력하기
+ let 숫자4 = prompt('앞 정수 입력')
+ let 숫자5 = prompt('뒤 정수 입력')
+  console.log(  ((숫자4 /숫자5)*100  ) + ' % ' )  
+   
+   
+   
+   
+   
+   
+   </script>
+
+
+
+
+
+
+
+</body>
+</html>

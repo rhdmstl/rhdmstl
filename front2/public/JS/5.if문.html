@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <!-- 조건문 : [if,switch]
+        예) 동생(컴퓨터)에게 a,b,c 편의점에서 1000 콜라 심부름
+        a편의점 콜라금액 확인 1000원 이하이면 구매
+        아니면
+        b편의점 1000원 이하이면 구매
+        아니면
+        c편의점 1000원 이하이면 구매
+        아니면
+        집 
+        
+        
+        if형태
+        1.if (조건 ) { 
+         (조건 참일때) 실행문
+        }
+        
+        
+        
+        2.if (조건) {
+          참일때
+        }
+         else{
+          거짓일때
+         }
+         
+         
+         
+        3. if 중첩
+         if(조건) {
+           if(조건){ 
+           }
+           else{
+           }
+            else{
+              if(조건){
+                     }
+              else{
+                  }
+                }
+         }
+         
+         
+         4. if~else if~else
+          if(조건1){참1실행}
+          else if(조건2){참2실행}
+          else if(조건3){참3실행}
+          else if(조건4){참4실행}
+          else {거짓실행}
+   
+   
+   
+    -->
+  <script type="text/javascript">
+   if( 273 < 100 ){
+	 alert('273<100 -> true')  
+   }
+     alert('종료')
+     
+     
+     
+     
+     const hour = 14
+     if(hour < 12){
+    	alert(' 오전입니다 ')
+     }
+     if(hour >= 12){
+     	alert(' 오후입니다 ')
+      }
+     
+     
+     
+     
+     if(hour < 12){
+      	alert(' 오전입니다 ')
+       }
+     else{
+    	alert(' 오후입니다 ')
+       }
+     
+     
+     
+     if( hour < 11){
+    	 alert('아침 먹을 시간입니다.')
+     }else{
+    	 if( hour < 15){
+    		 alert('점심 먹을 시간입니다.')
+    	 }else{
+    		 alert('저녁 먹을 시간입니다.')
+    	 }
+     }
+  
+     
+     
+     
+  	 if(hour < 11){
+  		 alert('아침 먹을 시간입니다')
+  	 }else if(hour < 15){
+  		 alert('점심 먹을 시간입니다')
+  	 }else{
+  		 alert('저녁 먹을 시간입니다')
+  	 }
+  	 
+  	 
+  	 
+  	 
+  	 
+  	const a = Number(prompt('숫자입력') )
+  	if(a > 0 ){alert('a는 양수입니다.')}
+  	else if(a === 0){alert('a는 0입니다')}
+  	else {alert('a는 음수입니다')}
+  	
+  	
+  	
+  	const b = Number(prompt('숫자입력') )
+  	if(b%2 == 0){ alert('짝수입니다')}
+  	else{ alert('홀수입니다')}
+  	
+  	
+  	
+  	const c = Number(prompt('월 입력') )
+  	if(c >= 3 && c<=5)
+  	{alert('봄')
+  	}else if(c >= 6 && c<=8)
+  	{alert('여름')
+  	}else if(c >= 9 && c<=11)
+  	{alert('가을')
+  	}else
+  	{alert('겨울')
+  	 }
+  	
+  	 
+  	
+  
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <script type="text/javascript">
+   
+   let 문제7 = Number(prompt('문제 7: 줄의 수'))
+	output = ''
+		for (let i = 0 ; i<문제7 ; i++){
+			for ( let s = 1 ; s<문제7-i ; s++){
+				output += ' '
+			}
+			for (let s = 0 ; s<i*2+1 ; s++){ 
+				output += '*'
+			}
+			output += '\n'
+			
+		}
+   		for (let i = 0 ; i<문제7 ; i++){
+   			for(let s = 0 ; s<i+1 ; s++){
+   				output+=' '
+   			}for (let s = 0 ; s<(문제7-1)*2-(i*2+1) ; s++){
+   				output+='*'
+   			}
+   			output += '\n'
+   		}
+   			
+	console.log(output)
+   
+   </script>
+</body>
+</html>
