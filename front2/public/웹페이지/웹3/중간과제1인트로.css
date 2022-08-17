@@ -30,7 +30,7 @@ li{ list-style-type: none; }
 	color: white;
 }
 
-.sub_text p{
+.sub_text li{
 	text-align: center;
 	font-size: 30px;
 	color: white;
