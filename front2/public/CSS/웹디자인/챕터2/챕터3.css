@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+.post_title{
+	padding-bottom: 50px;
+	background-image: liner-gradient
+		( 45deg , #fff 30% , #ccc 30% , #ccc 50% , #fff 50% , #fff 80% , #ccc 80% , #ccc 100%);
+	margin-bottom: 1.5rem;
+	background-size: 6px px;
+	object-fit: cover;
+}
+.post_title h2{
+	background-color: white;
+	padding: 0 0.5rem , 875rem;
+	font-size: 1.5rem;
+	font-family: '굴림';
+	font-weight: 500px;
+	line-height: 1.5px;
+}
+.post_title a{
+	color: #949087;
+	text-decoration: none;
+}
+/*-----------------------------------------*/
+.post_img{
+	width: 100%;
+	height: 260px;
+	border-radius: 40% 70% 50% 30%/50%;
+}
+.post_thumb{
+	position: relative;
+}
+/*-------------------------------------------*/
+.btn a{
+	color: #fff;
+	padding: 10px 20px;
+	background: #eda1a1;
+	box-shadow: 0 0 0 5px #eda1a1;
+	border: 2px dashed #eda1a1;
+	border-radius: 5px;
+	text-decoration: none;
+	display: inline-block;
+}
+.btn a:hover {
+	color: #fff;
+	background: #e38787;
+	box-shadow: 0 0 0 5px #e38787;
+	border: 2px dashed #eda1a1;
+}
+/*--------------------------------------------*/
+.article ul li{
+	content: '';
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: #93d8d0;
+	display: inline-block;
+	margin: 0 8px 2px 0;
+}
+/*미디어쿼리 : 디바이스 크기에 따라 css설정*/
+@media(min-width: 600px){
+	.container{
+		display: flex;
+		justify-content: space-between;
+	}
+	main{width: 68%;}
+	aside{width: 26%;}
+	.post_img{ /*비율이 깨질수있음*/
+		width: 220px;
+		height: 180px;
+	}
+	.post_thumb{
+		shape-outside: circle();
+		float: left;
+		margin: 0 3rem 1rem 0;
+	}
+}
+/*min-width 600px 최소 가로사이즈 600px이상에서 사용됨
+	모바일적용에 자주 씀
+	*/
