@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+/*가상요소*/
+ul li::before{
+	content: '\f1e2';
+	font-family: "Font Awesome 5 pro";
+	color: #f66;
+	font-weight: 900;
+}

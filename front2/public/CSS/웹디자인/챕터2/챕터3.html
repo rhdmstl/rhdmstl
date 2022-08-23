@@ -3,26 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	
 	<!-- css 기본 초기화 -->
 	<link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
-
+	<!-- 뷰포트 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--구글 웹 폰트 -->
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|M+PLUS+Rounded+1c:400,500&display=swap" rel="stylesheet">
+	<!-- 폰트어썸에서 제공하는 링크 글머리기호 아이콘 -->
+	<script src="https://kit.fontawesome.com/b8a7fea4d4.js"></script>
+	<!-- 내 css -->
 	<link href="챕터3.css" rel="stylesheet">
-
+	
 </head>
 <body>
 
 	<div class="container">
 		<main>
 			<article>
-				..메인콘텐츠..
+				
 				<div class="post_title">
 					<h2><a href="#">처음 고양이를 키우는 분이면 필수로 필요한것</a></h2>
 				</div>
 				
 				<div class="post_thumb">
 					<p class="post_date"><span>2021</span> 12/28 </p>
-					<img class="post_img" alt="" src="../img2/고양이1.jpg">
+					<img class="post_img" alt="" src="img2/고양이1.jpg">
 				</div>
 				<p class="post_desc">
 					처음 고양이를 키운다면 우선 무엇이 필요할까요?
@@ -40,11 +45,44 @@
 					<li> 화장실,화장실 모래</li>
 					<li> 식품</li>
 				</ul>
+				
+			<ol>
+				<li>건식사료A</li>
+				<li>습식사료B (C배합)</li>
+				<li>건식사료D 닭고기맛</li>
+			</ol>
+			`	
+			<blockquote>
+				<div class="bqbox">
+					<p>쉬고있는 고양이의 눈은 아주 부드럽습니다
+					   적대적이지 않고 상대방에세 호의가 있을 때는 눈을 가능게 뜨거나 깜빡거립니다
+					   가끔 윙크를 할 때도 있습니다
+					</p>
+				</div>
+			</blockquote>
 			</article>
+			
+			<ul class="pagination">
+					<li><a href="#" class="current">1</a> </li>
+					<li><a href="#">2</a> </li>
+					<li><a href="#">3</a> </li>
+					<li><a href="#">4</a> </li>
+					<li><a href="#">&gt;</a> </li>
+				</ul>
 		</main>
-		
-		<aside>
-			..사이드콘텐츠..
+		<!-- 140p -->
+		<aside><!-- 사이드바 -->
+			
+			<div class="side_box">
+				<h3>categore</h3>
+				<ul>
+					<li><a href="#">고양이 종류 </a> </li>
+					<li><a href="#">식사 사료 </a> </li>
+					<li><a href="#">건강·질병 </a> </li>
+					<li><a href="#">고양이 상태 </a> </li>
+					<li><a href="#">고양이와 함께 사는법 </a> </li>
+				</ul>
+			</div>
 		</aside>
 	</div>
 
