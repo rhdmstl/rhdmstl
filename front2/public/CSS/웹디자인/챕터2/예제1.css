@@ -1,11 +1,10 @@
 @charset "UTF-8";
 
-h1{
-	font-size: 2rm;
-	font-family: '굴림';
-	font-weight: bold;
-	display: inline-block;
-	background-image: linear-gradient(transparent 50%, #ff6 50%);
-		/*선형그라데이션 : transparent(투명색)*/
-	padding-bottom: .25rem;
+body{
+	background-image: url("img2/bg1.png"),url("img2/bg2.png");
+	/*배경이미지는 , 이용한 다수 이미지 적용*/
+	background-position: left top , right top;
+	/*첫번째 이미지 , 두번째 이미지*/
+	background-repeat: no-repeat;
+	text-align: center;
 }

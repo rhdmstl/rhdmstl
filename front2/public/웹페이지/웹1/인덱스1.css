@@ -24,13 +24,12 @@
  .top_menu{ text-align: right; margin-top: 20px; }
  .main_menu{ margin-top: 20px; font-size: 20px; }
  .main_menu li{display: inline; margin-left: 80px; }
- /*header*/
  
  /*main_img*/
- .main_img{
+ #main_img{
  	clear: both;
  	width: 100%; height: 250px;
- 	background-image: url("img/main_img.png");
+ 	background-image: url("../img/main_img.png");
  	background-repeat: no-repeat; /*자동채우기*/
  	background-position: top center; /*박스권 배경 이미지 정렬*/
  	margin: 20px;
@@ -39,44 +38,43 @@
   
   /*본문*/
  #content{
- 	width: 1200px; 
- 	margin: 0 auto;
- }
- .conte li{ list-style-type: none;} /*글머리 제거*/
- .sub_manu{ float: left; width: 250px;}
- .main_content{ float: right; width: 900px; margin-bottom: 20px; }
- .sub_manu h3{ 
- 	font-size: 20px; 
- 	color: white;
- 	background-color: blue;
- 	padding: 15px;
+	width: 1200px; margin: 0 auto;
 }
- .sub_manu li{
- 	list-style-type: none; /*글머리 제거(특수문자)*/
- 	border-bottom: dotted 1px #eeeeee;/*점선*/
- 	padding: 10px;
- 	
- }
- .main_content h3{
- 	font-size: 20px; padding-bottom: 10px;
- 	border-bottom: solid 1px #eeeeee;
- }
- .main_content p{
- 	line-height: 180%; /*줄간격*/
- 	margin-top: 30px;
- }
- .content_img{ text-align: center; }
- .main_content li{ padding: 10px; }
- /*본문*/
+#content li{ list-style-type: none; }  /*글머리 제거*/
+.sub_menu{ float: left; width: 250px; }
+.main_content{ float: right; width: 900px; margin-bottom: 50px; }
+
+.sub_menu h3{ 
+	font-size: 20px; color: #54d1ab;
+	background-color: #516e7f; padding: 15px;  
+}
+.sub_menu li{
+	border-bottom: dotted 1px #eeeeee; /* 아래테두리 */
+	padding: 10px; 
+}
+.main_content h3{
+	font-size: 20px; padding-bottom: 10px;
+	border-bottom: solid 1px #eeeeee;
+}
+.main_content p {
+	line-height: 180%; /*줄간격 %  */
+	margin-top: 20px;
+}
+.content_img{ text-align: center;}
+.main_content li{ padding: 5px;}
+
  
  /*푸터*/
- .footer{ 
+ #footer{ 
  	clear: both;  
- 	background-color: black; 
- 	height: 150px; }
+ 	background-color: #2c2a29; 
+ 	height: 150px; 
+ }
+
  .ft_box{ width: 1200px; height: 150px; margin: 0 auto;}
+ .ft_logo{float: left; margin: 50px 0 0 30px;}
  .ft_address{float: right; color: white; margin: 50px 30px 0 0 ;}
- /*푸터*/
+
  
  
  
