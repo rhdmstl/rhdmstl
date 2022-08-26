@@ -15,7 +15,7 @@ section{
 }
 
 .hero{
-	background-image: url("이미지/브래드1.jpg"); /*배경이미지*/
+	background-image: url("../img.bg1.png"); /*배경이미지*/
 	text-align: center;
 	padding-top: 10vh;
 	font-family: 'Silkscreen', cursive;

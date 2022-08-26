@@ -186,12 +186,30 @@ bqbox{
 	font-size: 1.5rem;
 	color: #949087;
 }
+/*----------------------------------------------------*/
+footer{
+	background-color: #949087;
+	text-align: center;
+	padding: 3rem;
+}
+footer ul{
+	display: flex;
+	justify-content: center;
+	margin: 2rem;
+}
+footer li{margin: 0 12px;}
+footer a{color: white;}
+footer a:hover {color: #c7c3ba;}
+footer small{
+	color: #c7c3ba;
+	font-size: .875rem;
+}
 /*----------------------------------------*/
 /*미디어쿼리 : 디바이스 크기에 따라 css설정*/
 @media( min-width : 600px)  { /* 가로사이즈 600px 이상일때 반응형 */
 	.container{
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-b  etween;
 	}
 	main{
 		width: 68%
@@ -207,6 +225,10 @@ bqbox{
 		margin : 0 3rem 1rem 0;
 		shape-outside : circle();
 		float: left;
+	}
+	.popular_posts{
+		position: static;
+		top: 1rem;
 	}
 	
 	

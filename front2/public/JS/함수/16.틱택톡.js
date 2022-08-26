@@ -59,6 +59,7 @@ function 게임판그리기(){
 		return false //알이 없다 null이면
 	}
 }
+
 //4.현재 상황에 겜임결과 판단하는 함수
  function 게임결과(){
 	for(let i = 0 ; i<=2 ; i+=3){
