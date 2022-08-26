@@ -1,0 +1,46 @@
+@charset "UTF-8";
+.container{
+	overflow: auto;
+	scroll-snap-type: y mandatory;
+	height: 100vh;
+	font-family: 'GmarketSansMedium';
+}
+
+section{
+	scroll-snap-align: start;
+	height: 101vh;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+header{
+	scroll-snap-align: start;
+	height: 101vh;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-image: url("../img/main.png");
+}
+
+header h1{
+	font-size: 20rem;
+	text-align: center;
+	color: brown;}
+.one{
+   height: 10vh;
+   font-size: 5rem;
+   text-align: left;
+   background-color: black;
+   color: white;
+}
+.img_diddid{
+	display: flex;
+	background-color: black;
+	color: white;
+	}
+.img_diddid img{
+	width: 37%;
+	height: 868px;
+	margin: 2px;
+}
