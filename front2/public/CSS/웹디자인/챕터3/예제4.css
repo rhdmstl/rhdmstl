@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.main_menu{
+	display: flex;/*하위속성 가로배치*/
+	justify-content: center; /*가로 정렬*/
+}
+.main_menu a{
+	padding: 1rem;
+	margin: 1rem;
+}
+.has_menu{ position: relative;}
+.sub_menu{
+	position: absolute;
+	top: 2rem;
+	left: 1rem;
+	display: none;
+}
+.sub_menu a{ margin: 1px; width: 180px;}
+.has_menu:hover .sub_menu {/*마우스를 올렸을때*/
+	display: block;
+}

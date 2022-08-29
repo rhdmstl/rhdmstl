@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+section{
+	height: 70vh;
+	scroll-snap-type: y mandatory;
+	scroll-snap-align: start;
+	font-family: 'Silkscreen', cursive;
+}
+h2{
+	font-family: 'Silkscreen', cursive;/*구글웹폰트*/
+	font-size: 3rem;
+	padding-top: 3px;
+}
+.a, .b , .c  p{
+	font-size: 3rem;
+	margin-bottom: 5px;
+}
+h3{ font-size: 1rem; }
+
+.akfxlwm{
+	background-image: url("img2/이누2.jpg");
+	text-align: center;
+	background-size: contain;
+}
+.vnemf{
+	background-image: url("img2/가지.jpg");
+	background-size: contain;
+	text-align: center;
+}
+.rhdiddl{
+	background-image: url("img2/호두.jpg");
+	background-size: contain;
+	text-align: center;
+}
+.contact{
+	background-image: url("img2/땅콩.jpg");
+	background-size: contain;
+	text-align: center;
+}
+.contactsns{
+	display: flex;
+	justify-content: center;
+}
+/*미디어 쿼리 : 사이즈에 따라 css적용*/
+@media (max-width:700px) {
+	.title{
+		font-size: 4rem;
+		color: blue;
+	}
+}

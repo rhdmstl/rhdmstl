@@ -1,0 +1,76 @@
+@charset "UTF-8";
+form {
+	 	 text-align: center;
+	 	 font-family:나눔고딕;
+	  	 background-color:#f5f6f7;
+	     margin: 20px;
+	     width: 400px;
+	     padding: 150px; 
+		   ;}
+		   
+img { display: block; 
+	  margin: 0 auto; 
+	  padding: 30px;
+}
+      
+
+form input {width: 380px;
+		   height: 30px;
+		   text-align: left;
+		   border:solid 2px lightgray;
+}
+		   
+div{ font-weight: bolder;
+	 text-align: left;
+	 font-size: 12px;
+	 margin: 10px;
+	 margin-top: 15px;}
+	 
+.흐릿 , .흐릿1 , .흐릿2 , .흐릿3 , .흐릿4 {color: lightgray;
+	  padding-left: 5px;}
+.흐릿2 {background-color:#f7f7f7;
+}
+select {width: 392px;
+		height: 40px;
+		text-align: left;
+		border:solid 2px lightgray;
+}
+
+.but1 {
+	  background-color:#03c75a;
+	  color:white;
+	  border:none;
+	  margin: 5px 0px;
+	  width: 85px;
+	  height: 33px;
+	  font-size: 5px;
+	  padding:1px;
+	  display: inline;
+	  text-align: center;
+	  font-size: 10px;
+	  font-weight: bolder;
+}
+.but2 {
+	  background-color:#03c75a;
+	  color:white;
+	  border:none;
+	  width: 392px;
+	  height: 40px;
+	  margin: 30px 0px;
+	  text-align: center;
+	  font-size: 15px;
+	  font-weight: bolder;
+}
+.흐릿1 {display: inline;
+	   width:290px;
+	   margin: 5px 0px;
+}
+.흐릿3 , .월 , .흐릿4{
+	   width:119px;
+	   display: inline;}
+.월 { height: 38px}
+.이름 {margin-top: 40px;}
+
+
+
+

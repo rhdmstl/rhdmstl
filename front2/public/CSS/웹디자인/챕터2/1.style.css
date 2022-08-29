@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+.container{
+	overflow: auto;
+	scroll-snap-type: y mandatory;
+	height: 100vh;
+}
+section{
+	height: 100vh; /*뷰포트의 높이*/
+	scroll-snap-align: start; /*스크롤이 멈추는 지점*/
+	background-size: cover; /*화면 비율유지*/
+	background-position: center center; 
+						/*가로	세로 정렬*/
+	background-repeat: no-repeat; /*자동채우기 제거*/
+}
+
+.hero{
+	background-image: url("../img.bg1.png"); /*배경이미지*/
+	text-align: center;
+	padding-top: 10vh;
+	font-family: 'Silkscreen', cursive;
+}
+
+.menu{
+	background-image: url("이미지.브래드2.jpg");
+	display: flex;
+	align-items: center;
+}
+.wrapper{
+	width: 900px;
+	margin: 0 auto; /*모델가로 정렬*/
+}
+.menulist tr{
+	margin-bottom: 5px;
+	line-height: 2xp;
+}
+
+.contact{
+	background-image: url("이미지.카페.jpg");
+	text-align: center;
+}
+.contactsns{
+	display: flex;
+	justify-content: center;
+}
+.contactsns a{
+	margin-top: 10px;
+	
+}
+
+.fa-square-facebook{ color: blue;}
+.fa-square-twitter{ color: red; }
+.fa-square-instagram{ color: purple; }
+
+.title{
+	font-family: 'Silkscreen', cursive;/*구글웹폰트*/
+	font-size: 7rem;
+	margin-bottom: 2rem;
+}
+
+
+/*미디어 쿼리 : 사이즈에 따라 css적용*/
+@media (max-width:700px) {
+	.title{
+		font-size: 4rem;
+		color: blue;
+	}
+}
