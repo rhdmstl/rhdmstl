@@ -65,25 +65,3 @@ function lotto_result(){
 	document.getElementById('resultbox').innerHTML = msg
 }
 
-//버튼 누르고 닫히면 층수로 올라가기
-
-/*
-	두 배열간 교집합[동일한 데이터] 개수 구하기 방법 
-	1. 
-	for( let i of select_numbers ){
-		for( let j of lotto_numbers ){
-			if( i == j) { 
-				count++ 
-			} 
-		}
-	} 
-	
-	2.
-	for( let i of select_numbers ){
-		if( lotto_numbers.indexOf( i ) != -1 ){ count++; }
-	}
-	
-	3.
-	let result_numbers = select_numbers.filter( (value) => lotto_numbers.includes(value) )
-	count = result_numbers.length
-*/
