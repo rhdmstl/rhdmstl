@@ -8,7 +8,7 @@ public class EX_자료형 {
 		int var1 = 0b1011;	//2진수
 		System.out.println("2진수 [ 1011--int(10진수)--> 11] : " + var1 );
 		
-		int var2 = 0206;
+		int var2 = 206;
 		System.out.println("8진수 [ 206 --int(10진수)--> 134 ] : " + var2);
 		
 		int var3 = 365;
