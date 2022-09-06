@@ -28,7 +28,14 @@ public class EX_문자열 {
 		 )  ( ')
 		(  /  )
 		 \(__)|
-	*/
+	
+		*/
+		System.out.println("\n-----------------");
+	 //예
+		System.out.println("\\  /\\");
+		System.out.println(") ( ')");
+		System.out.println("( / )");
+		System.out.println("\\(__)");
 	/*
 	    예제2 ) 강아지 console 출력
 		|\_/|
@@ -37,6 +44,12 @@ public class EX_문자열 {
 		|"^"`    |
 		||_/=\\__|
 	 */
+		// 예2)
+				System.out.println("|\\_/|");
+				System.out.println("|q p |  /}");
+				System.out.println("( 0 )\"\"\"\\");
+				System.out.println("|\"^\"`    |");
+				System.out.println("||_/=\\\\__|");
 	/*
 	    예제3 ) 출석부 출력
 	    	            [[ 출석부 ]]
@@ -45,20 +58,9 @@ public class EX_문자열 {
 		 강호동		출석		결석		출석
 		 유재석		출석		결석		출석
 		 --------------------------------------
-				
-	 */
-		System.out.println("\n-----------------");
-	 //예
-		System.out.println("\\  /\\");
-		System.out.println(") ( ')");
-		System.out.println("( / )");
-		System.out.println("\\(__)");
-	// 예2)
-		System.out.println("|\\_/|");
-		System.out.println("|q p |  /}");
-		System.out.println("( 0 )\"\"\"\\");
-		System.out.println("|\"^\"`    |");
-		System.out.println("||_/=\\\\__|");
+		*/		
+	 
+	
 	// 예3)
 		System.out.println("\t[[출석부]]");
 		System.out.println("\n--------------");
@@ -70,8 +72,8 @@ public class EX_문자열 {
 		
 	}
 }
-/*
 
+/*
 문자[ 한글자 ]			: char		:	'자'
 문자열[ 두글자 이상 ]	: String	:	"자바 입니다"
 

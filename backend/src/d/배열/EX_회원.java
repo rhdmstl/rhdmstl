@@ -52,7 +52,7 @@ public class EX_회원 {
 										}//if e
 										else if (btn2 == 2) {
 											break;
-										}//else e
+										}//else e 
 									}//while e
 								break;
 							}//if e
