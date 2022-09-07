@@ -11,7 +11,7 @@
 	let btnlist = ''
 	for(let i = 1 ; i<=45 ; i++){
 		btnlist += `<button id=${i} onclick=btn_click(${i})>${i}</button>`
-		if(i % 1 == 0){ btnlist += '<br>'}
+		if(i % 5 == 0){ btnlist += '<br>'}
 	}
 	document.getElementById('btnbox').innerHTML = btnlist;
 }
@@ -44,7 +44,7 @@ function lotto_number(){
 		if( index >= 0){
 			
 		}else{
-			if( lotto_numbers.length == 1 ){
+			if( lotto_numbers.length == 6 ){
 				break
 			}
 			lotto_numbers.push(rand)
