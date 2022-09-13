@@ -54,9 +54,9 @@ public class EX_비회원제게시판 {
 		        		{continue;}//while문으로 탈출 [처음 화면으로 이동]
 		        		else if(ee==2) //2.글삭제 선택시 
 		        			
-		        		{System.err.print("비밀번호를 입력하세요");String input2=scanner.next();
+		        		{System.err.print("비밀번호를 입력하세요");String num2 =scanner.next();
 		        			//입력한 비밀번호 확인하기위한 scanner
-		        		if(textlist[numT][3]!=null&&textlist[numT][3].equals(input2)) {//만약에 입력한 비밀번호가 같으면 아래 코드 실행 
+		        		if(textlist[numT][3]!=null&&textlist[numT][3].equals(num2)) {//만약에 입력한 비밀번호가 같으면 아래 코드 실행 
 			        		textlist[numT][0]=null;	textlist[numT][1]=null;//저장된 값을 null로 바꾸고 
 			        		textlist[numT][2]=null;	textlist[numT][3]=null;
 			        		for(int a=numT;a<textlist.length; a++) {//알려주세요 
