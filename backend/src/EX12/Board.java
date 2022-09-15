@@ -7,6 +7,7 @@ public class Board {
 	String password;
 	int view;
 	
+	//생성자
 	public Board() {}
 
 	public Board(String title, String content, String writer, String password, int view) {
@@ -18,6 +19,6 @@ public class Board {
 		this.view = view;
 	}
 	
-	
+	       
 	
 }
