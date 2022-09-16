@@ -5,7 +5,7 @@ import java.util.Scanner;
 import javax.xml.stream.events.StartDocument;
 
 //print , scanner : 입/출력 작성할 예정 
-
+     
 	/*
 	 *  [ 과제 ]
 	 * 	1. main 메소드를 제외한 static 없이 구현 
@@ -59,7 +59,7 @@ public class View {
 				System.out.println("안내) 게시물 실패 [ 관리자에게 문의 ] ");
 			}
 			return;
-		}
+		}s
 		
 		// 3. 게시물 상세페이지 화면 구현 함수 
 		static void view_board( ) { 

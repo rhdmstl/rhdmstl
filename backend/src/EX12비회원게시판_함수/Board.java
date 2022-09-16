@@ -1,10 +1,10 @@
-package EX12;
+package EX12비회원게시판_함수;
 
 public class Board {
 	String title;
 	String content;
 	String writer;
-	String password;
+	String     password;
 	int view;
 	
 	//생성자

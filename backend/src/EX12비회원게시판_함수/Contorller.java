@@ -1,4 +1,4 @@
-package EX12;
+package EX12비회원게시판_함수;
 
 public class Contorller {
 	static Board[] boadlist = new Board[100];
