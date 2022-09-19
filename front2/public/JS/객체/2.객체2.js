@@ -37,11 +37,6 @@ const pet2 = {
 pet2.eat('밥')
 
 //254
-const 객체 = {
-	name	: '혼자공부하는 파이썬'
-	price	: 18000,
-	publisher	: '한빛미디어'
-}
 
 
 
