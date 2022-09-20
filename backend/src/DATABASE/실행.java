@@ -114,6 +114,21 @@ public class 실행 {
 					System.out.print( dto.debut_date 	+"\n" );	
 				 }
 			}//ch == 8 end
+			//9.
+			if(ch == 9) {
+				ArrayList<MemberDto>list = dao.예제9결과();
+				 System.out.println("---------------- 예제9 결과물 ---------------");
+				 for(MemberDto dto : list){
+					System.out.print( dto.mem_id		+"\t");
+					System.out.print( dto.mem_name 		+"\t");
+					System.out.print( dto.mem_number 	+"\t");
+					System.out.print( dto.addr 			+"\t");
+					System.out.print( dto.phone1 		+"\t" );
+					System.out.print( dto.phone2 		+"\t" );
+					System.out.print( dto.height 		+"\t" );
+					System.out.print( dto.debut_date 	+"\n" );	
+				 }
+			}//ch == 9 end
 		}//while e
 	}//main e
 }//class e

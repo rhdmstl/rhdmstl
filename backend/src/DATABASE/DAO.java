@@ -86,9 +86,8 @@ public class DAO {
 	ArrayList<MemberDto> 예제4결과() {
 		ArrayList<MemberDto>list = new ArrayList<>();
 		
-		String sql ="select mem_id , mem_name" 
-				+"from member"
-				+"where height <= 162";
+		String sql ="select mem_id , mem_name from member where height <= 162";
+				
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -106,9 +105,7 @@ public class DAO {
 	ArrayList<MemberDto> 예제5결과() {
 		ArrayList<MemberDto>list = new ArrayList<>();
 		
-		String sql = " select mem_name , height , mem_number" 
-				+"from member"
-				+"where height >= 165 and mem_number > 6";
+		String sql = "select mem_name , height , mem_number from member where height >= 165 and mem_number > 6";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -126,9 +123,7 @@ public class DAO {
 	//6.
 	ArrayList<MemberDto> 예제6결과() {
 		ArrayList<MemberDto>list = new ArrayList<>();
-		String sql = " select mem_name , height , mem_number"
-				+"from member "
-				+"where height >= 165 or mem_number > 6";
+		String sql = " select mem_name , height , mem_number from member where height >= 165 or mem_number > 6";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -146,8 +141,7 @@ public class DAO {
 	//7.
 	MemberDto 예제7결과() {
 		MemberDto dto = null;
-		String sql = "select * from member "
-				+"where mem_name like '우%'";
+		String sql ="select * from member where mem_name like '우%'";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -159,14 +153,13 @@ public class DAO {
 						rs.getShort(7), rs.getString(8));
 				return dto;
 			}
-		}catch(Exception e) {  System.out.println(" 예제6 오류 : " + e); }
+		}catch(Exception e) {  System.out.println(" 예제7 오류 : " + e); }
 		return dto;
 	}
 	//8.
 	ArrayList<MemberDto> 예제8결과(){
 		ArrayList<MemberDto>list = new ArrayList<>();
-		String sql = "select * from member"
-				+"where mem_name like '__핑크'";
+		String sql = "select * from member where mem_name like '__핑크'";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -179,7 +172,26 @@ public class DAO {
 				list.add(dto);
 			}
 			return list;
-		}catch(Exception e) {  System.out.println(" 예제6 오류 : " + e); }
+		}catch(Exception e) {  System.out.println(" 예제8 오류 : " + e); }
+		return list;
+	}
+	//9.
+	ArrayList<MemberDto> 예제9결과(){
+		ArrayList<MemberDto>list = new ArrayList<>();
+		String sql = "select mem_id , mem_name , debut_date from member order by debut_date desc";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				MemberDto dto = new MemberDto(
+						rs.getString(1), rs.getString(2), 
+						rs.getInt(3), rs.getString(4),
+						rs.getString(5), rs.getString(6),
+						rs.getShort(7), rs.getString(8));
+				list.add(dto);
+			}
+			return list;
+		}catch(Exception e) {  System.out.println(" 예제9 오류 : " + e); }
 		return list;
 	}
 }
