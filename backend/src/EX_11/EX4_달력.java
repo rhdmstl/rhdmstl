@@ -61,7 +61,7 @@ public class EX4_달력 {
 	
 	void 일정출력() {
 		HashMap<Integer, ArrayList<String>> map
-			= 달력Dao.getIntance().일정출력();
+			= 달력Dao.getIntance().일정출력(null, null);
 		for(Integer key : map.keySet()) {
 			for(String liSt : map.get(key)) {
 				System.out.println(liSt+"\t");

@@ -30,6 +30,11 @@ public class level1_7 {
 		
 		System.out.println("몸무게 double : "+ output);	double kg = scanner.nextDouble();
 
+		
+		
+			
+			
+		
 		System.out.println("=====회원 개인정보=====");
 		System.out.println("|\t회원명 : "+name+"\t\t|");
 		System.out.println("|\t상태 : "+con+"\t\t|");
