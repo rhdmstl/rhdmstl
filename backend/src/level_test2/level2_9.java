@@ -68,7 +68,6 @@ public static void main(String[] args) {
 					}else { result = num1[0]*num2[0];
 						System.out.println("땡!! 정답은"+result+"이지롱~");
 					}
-					
 					}//for e	
 					//점수 안내와 동시에 게임 종료
 					System.out.println("게임 끝~");
