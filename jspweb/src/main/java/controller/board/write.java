@@ -1,31 +1,38 @@
-package controller.member;
+package controller.board;
 
 import java.io.IOException;
-import java.util.Random;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Dao.boardDao;
 import model.Dao.memberDao;
 
-@WebServlet("/member/fineid")
-public class fineid extends HttpServlet {
+
+@WebServlet("/board/write")
+public class write extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
-    public fineid() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+    public write() {  super(); }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8"); //요청시 한글인코딩
-		String mname = request.getParameter("mname");
-		String memail = request.getParameter("memail");
+		//세션호출
+		String mid = (String)request.getSession().getAttribute("mid");
+		int mno = memberDao.getInstance().getMno(mid);
+		System.out.println(mno);
+		String btitle = request.getParameter("btitle");
+		String bcontent = request.getParameter("bcontent");
 		
-		String result = memberDao.getInstance().fineid(mname, memail);
+		boolean result = boardDao.getInstance().write(btitle, bcontent,mno);
+		
+		System.out.println(result);
+		/*form 전송용*/
+		//if(result) {response.sendRedirect("list.jsp");}
+		//else {response.sendRedirect("write.jsp");}
+		
+		/*js용*/
 		response.getWriter().print(result);
 		
 	}
@@ -34,4 +41,5 @@ public class fineid extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+
 }

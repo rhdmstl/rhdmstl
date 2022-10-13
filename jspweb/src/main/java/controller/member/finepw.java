@@ -14,13 +14,13 @@ import model.Dao.memberDao;
 @WebServlet("/member/finepw")
 public class finepw extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
+
     public finepw() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8"); //요펑시 한글인코딩
 		String mid = request.getParameter("mid");
 		String memail = request.getParameter("memail");
@@ -40,6 +40,7 @@ public class finepw extends HttpServlet {
 		}//if e
 		response.getWriter().printf(randstr);	//ajax 전송
 	}
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

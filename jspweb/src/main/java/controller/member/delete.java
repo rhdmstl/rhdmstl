@@ -1,8 +1,6 @@
 package controller.member;
 
 import java.io.IOException;
-import java.util.Random;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,27 +9,29 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Dao.memberDao;
 
-@WebServlet("/member/fineid")
-public class fineid extends HttpServlet {
+@WebServlet("/member/delete")
+public class delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
-    public fineid() {
+  
+    public delete() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8"); //요청시 한글인코딩
-		String mname = request.getParameter("mname");
-		String memail = request.getParameter("memail");
-		
-		String result = memberDao.getInstance().fineid(mname, memail);
+		// 1. 변수 요청 
+		String mpassword = request.getParameter("mpassword");
+		//세션 호출
+		String mid = (String)request.getSession().getAttribute("mid");
+		//2.Dao
+		boolean result = memberDao.getInstance().delete(mid, mpassword);
+		//4.
 		response.getWriter().print(result);
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+
 }

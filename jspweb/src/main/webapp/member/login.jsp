@@ -16,7 +16,7 @@
 		<ul>
 			<li> <a href="signup.jsp">회원가입</a> </li>
 			<li> <a href="fineid.jsp">아이디찾기</a> </li>
-			<li> <a href="#">비밀번호찾기</a> </li>
+			<li> <a href="finepw.jsp">비밀번호찾기</a> </li>
 		</ul>
 		
 	<div id="loginconfirmbox"></div> <!-- 결과 메세지  -->

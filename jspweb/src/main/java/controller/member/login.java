@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.Dao.memberDao;
 
@@ -21,6 +22,11 @@ public class login extends HttpServlet {
 		String mpassword = request.getParameter("mpassword");
 		
 		int result = memberDao.getInstance().login(mid, mpassword);
+		//만약 로그인 성공하면 세션에 메모리할당
+		if(result== 1) {
+			HttpSession tptus = request.getSession(); //객체생성
+			tptus.setAttribute("mid", mid); //setAttribute(식별자 , 데이터)
+		}
 		response.getWriter().print(result);
 	}
 
@@ -28,6 +34,7 @@ public class login extends HttpServlet {
 		//form에서 변수 요청
 		String mid = request.getParameter("mid");
 		String mpassword = request.getParameter("mpassword");
+		
 		
 //		int result = memberDao.getInstance().login(mid, mpassword);
 		

@@ -31,7 +31,7 @@ public class signup extends HttpServlet {
 		String mphone = request.getParameter("mphone");
 		String memail = request.getParameter("memail");
 		
-		//주소
+		//주소 카카오우편 API
 		String maddress1 = request.getParameter("maddress1");
 		String maddress2 = request.getParameter("maddress2");
 		String maddress3 = request.getParameter("maddress3");
@@ -39,7 +39,7 @@ public class signup extends HttpServlet {
 		
 		String maddress = maddress1+","+maddress2+","+maddress3+","+maddress4;
 		
-		memberDto dto = new memberDto(0, id, mpwdconfirm, mname, mphone, memail, maddress, null, 0);
+		memberDto dto = new memberDto(0, id, mpw, mname, mphone, memail, maddress, null, 0);
 		System.out.println(dto.toString());
 		
 		boolean result = memberDao.getInstance().singup(dto);

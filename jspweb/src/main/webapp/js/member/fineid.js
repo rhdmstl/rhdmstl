@@ -33,10 +33,11 @@
 		url : "/jspweb/member/finepw",
 		data : {"mid" : mid , "memail" : memail},
 		success : function(re){
+			alert(re)
 			if(re === ''){
 				resultbox.innerHTML = '동일한 회원 정보가 없습니다'
 			}else{
-				resultbox.innerHTML = '임시비밀번호' + re
+				resultbox.innerHTML = '임시비밀번호 : ' + re
 			}
 		}
 	})

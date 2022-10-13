@@ -7,7 +7,6 @@
 	 let mpassword = document.querySelector('#mpassword').value
 	 let loginconfirmbox = document.querySelector('#loginconfirmbox')
 	 
-	 
 	 //jquery 라이브러리 포함
 	 //ajax
 	 //$.ajax({속성명 = 값 , ...})
@@ -23,13 +22,13 @@
 				location.href ="/jspweb/index.jsp";
 			}else if(re ==='2'){
 				alert("패스워드가 다릅니다")
-				loginconfirmbox.innerHTML = "회원정보가 다릅니다";
+				loginconfirmbox.innerHTML = "패스워드가 다릅니다";
 			}else if(re === '3'){
 				alert("관리자에게 문의하세요")
-				loginconfirmbox.innerHTML = "회원정보가 다릅니다";
+				loginconfirmbox.innerHTML = "데이터베이스 오류";
 			}else if(re === '0'){
 				alert("없는 아이디입니다")
-				loginconfirmbox.innerHTML = "회원정보가 다릅니다";
+				loginconfirmbox.innerHTML = "존재하지않는 아이디입니다";
 			}
 		}
 	});
