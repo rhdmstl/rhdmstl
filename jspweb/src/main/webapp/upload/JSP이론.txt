@@ -1,0 +1,169 @@
+java -> 서블릿클래스(요즘은 잘 안나옴 = api를 더 많이 씀)
+	1.자바에서 웹페이지 제작을 위한 *클래스
+Servlet 문제점
+	1.백엔드와 프론트엔드의 구별/연동이 생겨 개발이 어려움
+--> 해결방안
+	1.백엔드와 프론트엔드 합치자 = JSP
+---------------------------------------------------------------------------------------
+홈피 대규모 작업 -> MVC패턴(new) - JSP를 안씀
+	
+	MVC1패턴 : JSP 파일 : JAVA+HTML	[V/C]
+		   DAO   : JAVA		[M]
+
+	MVC2패턴 : JSP 파일 : HTML		[V] = react
+		   서블릿 : JAVA		[C] = spring
+		   DAO   : JAVA		[M]
+
+
+웹서버 요청 url
+	http : 문서(html) 교환 통신규약
+	http: ip주소 :
+---------------------------------------------------------------------------------------
+html만들고
+서블렛으로 자바홈피 만들고(제어 및 메소드 호출)*리퀘스트객체?
+ dto 싱호출해서 출력해서 확인해보기
+
+dao 슈퍼클래스 하나 만들기 = 객체만들고 db주소 불러오기(선언 호출 구별 잘하기)
+
+memberdao라고 dao하나 더 만들고 dto에 있는거 담아서 
+sql문 작성하여 리턴값을 서블렛으로 전달해주시
+
+서블렛에서 리턴값 제어하는 문장 만들기
+
+<요약>
+dto 객체및 게터세터 생성자만들기
+
+dao
+-슈퍼클래스(db연결)
+-db저장하고 서블렛으로 값을 전달해주기
+
+서블렛 메소드 호출및 제어
+
+html 폼작성하기						2022-10-06
+---------------------------------------------------------------------------------------
+<form action="전송받을 url(서블릿경로)" method="전송방식(post/get)"> 
+		
+		HTTP
+		-post : url에 변수 없음(보안높음)
+			-회원가입/로그인
+			-매번 새로 접속해서 로딩 느림
+			-보안에 강해서 회원가입/로그인 시 사용
+			
+		-get : url에 변수가 표시됨(보안낮음)
+			-캐시(전송기록 누적)
+			-다음 접속 로딩 단축
+			-정보유출등 보안에 상관없는 페이지사용(상세페이지)
+
+서블릿 url http:localhost:8080/프로젝트명/서블릿url정의
+
+
+html -> form -> 서블릿
+
+주소경로는 위치가 동일하다면 상대경로만 적어도됌
+login.jsp - http:localhost:8080/jspweb/member/login.jsp
+login.서블릿 - http:localhost:8080/jspweb/member/login
+	= action = "login"
+
+request.getParameter(html name가져옴)
+request.setCharacterEncoding( "UTF-8" ); 한글지원
+
+response.sendRedirect("url")
+
+1.동기식(form)
+
+2.비동기식(로그인)
+
+---------------------------------------------------------------------------------------
+JSP[HTML] -> 통신  -> 서블릿[JAVA]
+
+1.form태그 액션 = '서블릿URL'
+	   메소드 = post/get
+		-intput name = '식별자'
+
+2.AJAX 메소드(JQUERY) = $.ajax({식})(제이쿼리 문법)
+	1. !필수! = <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	2. $.ajax({'속성' : 데이터 , '속성' : 데이터})
+		$.ajax({
+		url : "/jspweb/member/finepw", (프로젝트명/파일순서대로 입력)
+		data : {"mid" : mid , "memail" : memail},
+		success : function(re){ 
+			alert(re) //확인하기
+			if(re === ''){resultbox.innerHTML = '동일한 회원 정보가 없습니다'}
+			else{resultbox.innerHTML = '임시비밀번호 : ' + re}
+		}
+	})
+	3. 속성 
+		0. type	:"get" , "post"(get이 기본형)
+		1. url	: "서블릿 URL"
+		2. data	: {"속성명" : 데이터 , "속성명" : 데이터}
+		3. async	: true[비동기식 = 결과 상관없이 명령실행] or false[동기식 = 결과를 받아야 다음 명령실행]
+		4. success : function(반환매개변수){}
+
+---------------------------------------------------------------------------------------
+서버 : 정보를 가지고 있는 PC
+
+DB서버 : http://localhost:3306 - DB의 정보를 저장하거나 빼올수 있다
+
+AWS이식트 가상서버에 통캣 설치 localhost:8080
+개발자가 컴파일(프로젝트 업로드)하면 사용자들에게 서비스 제공
+메모리 저장위치
+	1.사용자[크롬] - 쿠키
+	2.웹서버[통캣] - 세션/JVM
+
+HTTP 웹 전용 메모리 
+	1. 세션 : 웹서버 저장
+	2. 쿠키 : 사용자 PC저장 [개인정보]
+---------------------------------------------------------------------------------------
+HTTP
+	1. request
+	2. response
+	3. getSession
+세션 : 웹서버 세션저장소
+	1. 객체생성 HttpSession 세션객체명 = request.getSession();
+	2. 세션할당 : 세션객체명.setAttribute("식별자" , 데이터); - Object 객체로 저장
+	3. 세션호출 : 세션객체명.setAttribute("식별자");
+			- Object 객체로 호출
+			- 형변황 필수(세션은 자료가 아니라 *오브젝트라서 무조건해야함)
+	1.세션삭제 : 세션객체명.invalidate():
+		   
+
+JSP태그 
+	1.<% %> : 스크립트태크 [HTML에서 JAVA코드 작성할 수 있는 공간
+	2.<%= %> : 표현식태그 JAVA메모리 호출
+
+JSON put으로 save 함 js가 dto를 못 받?읽어서 형변환을 시켜줌
+서블릿 - JSONObject object = new JSONObject();
+JS - let member = json.parse(result)
+---------------------------------------------------------------------------------------
+게시판 등록
+	1.HTML 작성
+	2.from / ajax 전송
+	3.제목 내용 input입력받기
+	4.submit 버튼 클릭해서 전송
+	5.
+---------------------------------------------------------------------------------------
+request.setCharacterEncoding("UTF-8");	:한글인코딩
+response.getWriter().print(데이터);		:문자열[데이터]확인
+response.sendRedirect(uploadpath);		:전송
+response.setHeader(bfile, uploadpath);		:
+
+1. 다운로드할 파일명을 요청한다
+2.업로드경로와 파일명 합친다
+3.해당 파일을 객체화[file 클래스]
+4.다운로드형식[response.setHeader()]
+5. 전송 -> HTTP
+▶BufferedInputStream 입력
+▶BufferedOutputStream 출력
+
+
+
+
+
+
+
+
+
+
+
+
+

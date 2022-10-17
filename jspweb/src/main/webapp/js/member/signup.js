@@ -112,34 +112,6 @@ let bicon = '<i class="fas fa-ban"></i>';
 	document.querySelector('.signupform').submit();	// 해당 form 전송 // 폼객체.submit()
 	// document.querySelector('.signupform') : signupform 이라는 class 를 가지고 있는 tag 호출
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * 	카카오우편API
  */

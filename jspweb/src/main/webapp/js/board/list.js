@@ -25,7 +25,7 @@
 					'<tr>';
 			}
 			console.log(html)
-			docment.querySelector('.btable').innerHTML = html
+			document.querySelector('.btable').innerHTML += html
 		}
 	})
 }

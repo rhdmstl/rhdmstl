@@ -16,22 +16,13 @@
 	<div class="webbox">
 	 
 		<h3>글쓰기</h3> 
-		 <!--
-		<!-- form = 페이지전환 , ajax 페이지전환 없음 -->
-		<!-- 
-		<form method="get" action="/jspweb/board/write">
-			제목 : <input type="text" name="btitle">
-			내용 : <input type="text" name="bcontent">
-			<button type="submit">쓰기</button>
-		</form>
-		-->
 		<form class="table">
 			제목 : 	<input type="text" name="btitle"> <br>
 			<!-- 섬머노트 -->
   			<textarea id="summernote" name="bcontent"></textarea>
 			첨부파일 :	<input type="file" name="bfile"> <br>
 			<!-- form태그 안에서는 버튼 타입으로 수정하기 -->
-			<button type="button" onclick="bwrite()">쓰기</button> 
+			<button type="button" onclick="bupdate()">수정</button> 
 		</form>
 		
 	</div>
@@ -42,7 +33,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 	<script src="lang/summernote-ko-KR.js"></script>
 	<!-- 사용자정의 js -->
-	<script type="text/javascript" src="../js/board/write.js"></script>
+	<script type="text/javascript" src="../js/board/update.js"></script>
 	
 </body>
 </html>

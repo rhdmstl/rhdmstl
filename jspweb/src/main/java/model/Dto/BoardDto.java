@@ -11,6 +11,7 @@ public class BoardDto {
 	private int mno;
 	// 게시물 출력용 
 	private String mid;
+	
 	public BoardDto() {
 		super();
 	}
