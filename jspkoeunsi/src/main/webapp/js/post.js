@@ -7,7 +7,7 @@
 	
 	console.log(list)
 	$.ajax({
-		url : "http://localhost:8080/jspkoeunsi/postlist",
+		url : "/jspkoeunsi/postlist",
 		success : function(result){
 			console.log(result)
 			let list = JSON.parse(result)
@@ -40,7 +40,10 @@
 		url : "/jspkoeunsi/post", //서블렛
 		data : { "mtitle" : mtitle , "mcontent" : mcontent , "mwtiter" : mwtiter , "mpw" : mpw} ,
 		success : function(re){
-			if(re === 'true'){alert('등록완료')}
+			if(re === 'true'){
+				location.href = location.href
+				alert('등록완료')}
+			
 			else{alert('등록실패')}
 		}
 	})

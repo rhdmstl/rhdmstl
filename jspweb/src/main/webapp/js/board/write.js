@@ -27,10 +27,10 @@
 		contentType : false,
 		processData : false,
 		type : 'POST',
-		success : function( re ){ 
+		success : function( re ){
 			if(re === 'true'){ 
 				alert('글등록');
-				location.hefr="list.jsp"
+				location.href="list.jsp"
 			}
 			else{alert('글등록 실패')}
 		 }

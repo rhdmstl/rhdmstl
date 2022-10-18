@@ -48,7 +48,7 @@ public class write extends HttpServlet {
 		// 3.MultipartRequest : 첨부파일 지원 [대량의 문자지원]-post메소드만 지원
 		// new MultipartRequest(1.요청방식, 2.파일저장경로, 3.최대용량범위, 4.인코딩타입, 5.기타(보안기능));
 		// 1.저장경로[프로젝트 저장]
-		String uploadpath = "C:\\Users\\504\\git\\rhdmstl\\jspweb\\src\\main\\webapp\\upload";
+		String uploadpath = request.getSession().getServletContext().getRealPath("/upload") ; // jspweb/폴더명
 		MultipartRequest multi = new MultipartRequest(request, // 요청방식
 				uploadpath, // 저장경로
 				1024 * 1024 * 10, // 10mb
@@ -69,9 +69,10 @@ public class write extends HttpServlet {
 		System.out.println(bfile);
 		// 회원번호
 		int mno = memberDao.getInstance().getMno((String) request.getSession().getAttribute("mid"));
-		System.out.println();
+		System.out.println(mno);
 		// db처리
 		boolean result = boardDao.getInstance().write(btitle, bcontent, mno, bfile);
+		//응답
 		response.getWriter().print(result);
 	}
 

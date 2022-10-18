@@ -39,7 +39,7 @@
 		</table>
 		
 		<div class="btnbox">
-		<a href="list.jsp">목록보기</a>
+				<a href="list.jsp"> <button>목록보기</button> </a>
 		</div>
 		
 	</div>

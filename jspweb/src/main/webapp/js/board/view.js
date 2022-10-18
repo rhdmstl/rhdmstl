@@ -30,6 +30,7 @@
 				btnbox.innerHTML += deletebtn
 				//수정버튼
 				let updatebtn = '<button><a href="../board/update.jsp">수정</a></button>'
+				btnbox.innerHTML += updatebtn
 			}
 		}
 	})

@@ -25,7 +25,7 @@
 			<button type="submit">쓰기</button>
 		</form>
 		-->
-		<form class="table">
+		<form>
 			제목 : 	<input type="text" name="btitle"> <br>
 			<!-- 섬머노트 -->
   			<textarea id="summernote" name="bcontent"></textarea>

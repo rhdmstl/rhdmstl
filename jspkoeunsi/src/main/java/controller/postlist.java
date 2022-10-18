@@ -40,7 +40,6 @@ public class postlist extends HttpServlet {
 				object.put("mview",list.get(i).getMview());
 				
 			array.add(object);
-			System.out.println(array);
 			memberDao dao = new memberDao();
 		}
 		response.getWriter().print(array);
