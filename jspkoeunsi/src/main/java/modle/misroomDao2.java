@@ -9,6 +9,7 @@ public class misroomDao2 extends misroomDAO{
 		String sql = "insert into misroom(mid,mpw,mphone) values(?,?,?)";
 		try {
 			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getMname());
 			ps.setString(1, dto.getMid());
 			ps.setString(2, dto.getMpw());
 			ps.setString(3, dto.getMphone());

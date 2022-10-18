@@ -2,15 +2,17 @@ package modle;
 
 public class misroomDTO {
 	private int mno;
+	private String mname;
 	private String mid;
 	private String mpw;
 	private String mphone;
 	public misroomDTO() {
 		super();
 	}
-	public misroomDTO(int mno, String mid, String mpw, String mphone) {
+	public misroomDTO(int mno, String mname, String mid, String mpw, String mphone) {
 		super();
 		this.mno = mno;
+		this.mname = mname;
 		this.mid = mid;
 		this.mpw = mpw;
 		this.mphone = mphone;
@@ -20,6 +22,12 @@ public class misroomDTO {
 	}
 	public void setMno(int mno) {
 		this.mno = mno;
+	}
+	public String getMname() {
+		return mname;
+	}
+	public void setMname(String mname) {
+		this.mname = mname;
 	}
 	public String getMid() {
 		return mid;
@@ -41,7 +49,9 @@ public class misroomDTO {
 	}
 	@Override
 	public String toString() {
-		return "misroomDTO [mno=" + mno + ", mid=" + mid + ", mpw=" + mpw + ", mphone=" + mphone + "]";
+		return "misroomDTO [mno=" + mno + ", mname=" + mname + ", mid=" + mid + ", mpw=" + mpw + ", mphone=" + mphone
+				+ "]";
 	}
+	
 	
 }
