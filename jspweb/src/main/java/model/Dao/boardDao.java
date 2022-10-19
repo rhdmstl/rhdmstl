@@ -24,11 +24,17 @@ public class boardDao extends Dao{
 		return false;
 	}
 	//글출력
-	public ArrayList<BoardDto> getlist(int startrow , int listsize){
+	public ArrayList<BoardDto> getlist(int startrow , int listsize , String key, String keyword){
 		ArrayList<BoardDto> list = new ArrayList<>();
-		String sql = "select b.* , m.mid from member m , board b "
-				+ "where m.mno = b.mno "
-				+ "order by b.bdate desc limit "+startrow+" , "+listsize;
+		String sql = "";
+		if(!key.equals("")&&!keyword.equals("")) {
+		 sql = "select b.* , m.mid from member m , board b "
+				+ " where m.mno = b.mno  and "+key+" like '%"+keyword+"%' "
+				+ " order by b.bdate desc limit "+startrow+" , "+listsize; }
+		else {
+			sql = " select b.* , m.mid from member m , board b "
+					+ " where m.mno = b.mno order by b.bdate desc limit "+startrow+" , "+listsize;
+		}
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -111,6 +117,20 @@ public class boardDao extends Dao{
 			rs = ps.executeQuery();
 			if(rs.next())return rs.getInt(1);
 		} catch (Exception e) {System.out.println("전체게시물 오류"+e);}
+			return 0;
+	}
+	//검색된 게시물
+	public int gettotalsize(String key , String keyword){
+		String sql = "";
+		if(!key.equals("")&& !keyword.equals("")) {//검색이 있을경우
+		 sql = " select count(*) from member m , board b where m.mno = b.mno and "+key+" like '%"+keyword+"% ";
+		}else{//검색이 없는 경우
+		 sql = " select count(*) from member m , board b where m.mno = b.mno ";}
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) return rs.getInt(1);
+		} catch (Exception e) {System.out.println("검색오류"+e);}
 			return 0;
 	}
 }

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Dao.memberDao;
 import modle.misroomDTO;
 import modle.misroomDao2;
 
@@ -20,7 +21,10 @@ public class misroom extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String mid = request.getParameter("mid");
 		
+		boolean result =  misroomDao2.getInstance().idcheck(mid);
+		response.getWriter().print(result);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

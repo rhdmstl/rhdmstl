@@ -25,10 +25,20 @@ public class list extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		//검색처리
+		String key = request.getParameter("key");
+		String keyword = request.getParameter("keyword");
+		
+		System.out.println(key);
+		System.out.println(keyword);
+		
+		
+		
 		// 1. 요청페이징처리에 필요한 변수 요펑
 		int listsize = Integer.parseInt(request.getParameter("listsize"));
 		
-		//전체페이지수
+		//전체페이지수  vs  검색된 게시물 수
 		int totalsize = boardDao.getInstance().gettotalsize();
 		
 		int totalpage = 0;
@@ -65,8 +75,8 @@ public class list extends HttpServlet {
 		JSONObject boards = new JSONObject();
 		//전체 체이지수 계산
 		
-		// 2. db
-		ArrayList<BoardDto> list = boardDao.getInstance().getlist(startrow,listsize);
+		// 2. 전체 게시물 호출 vs 검색된 게시물 호출
+		ArrayList<BoardDto> list = boardDao.getInstance().getlist(startrow,listsize,key,keyword);
 		JSONArray array = new JSONArray();
 		for(int i = 0 ; i <list.size() ; i++) {
 			JSONObject object = new JSONObject();
@@ -77,10 +87,11 @@ public class list extends HttpServlet {
 			object.put("mid",list.get(i).getMid());
 			array.add(object);
 		}
-		boards.put("totalpage", totalpage);
-		boards.put("data", array);
-		boards.put("startbtn", startbtn);
-		boards.put("endbtn", endbtn);
+		boards.put("totalpage", totalpage);	//전체 페이지
+		boards.put("data", array);			//게시물 리스트
+		boards.put("startbtn", startbtn);	//버튼의 시작번호
+		boards.put("endbtn", endbtn);		//버튼의 끝 번호
+		boards.put("totalsize", totalsize);	//게시물 수
 		//응답
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(boards);

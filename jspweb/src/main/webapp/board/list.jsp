@@ -38,6 +38,17 @@
 		</table> --%>
 		
 		<!-- JS로 테이블 표시    [ HTML(JSP) --- JS ---- 서블릿 --- DAO ] -->
+		<div>게시물 수 : <div class="totalsize"></div></div>
+		
+		<div >
+			<select class="listsize" onchange="blistsize()">
+				<option class="5">5</option>
+				<option class="10">10</option>
+				<option class="15">15</option>
+				<option class="20">20</option>
+			</select>
+		</div>
+		
 		<table class="btable table">
 			<tr>
 				<th> 번호 </th> <th> 제목 </th> <th> 작성자 </th>
@@ -45,7 +56,22 @@
 			</tr>
 		</table>
 		
-		<div class="pagebox"></div>
+		<div class="pagebox">	<!-- 페이징처리 -->
+								
+		</div>
+		
+		<div><!-- 검색처리 -->
+			<select class="key">
+				<option value="b.btitle">제목</option>
+				<option value="b.bcontent">내용</option>
+				<option value="m.mid">작성자</option>
+			</select>
+			
+			<input placeholder="검색어" class="keyword">
+			<button type="button" onclick="bsearch()">검색</button>
+			
+			
+		</div>
 		
 	</div>
 	
@@ -55,3 +81,6 @@
 	<script type="text/javascript" src="../js/board/list.js"></script>
 </body>
 </html>
+
+<!-- <option value="">제목</option>
+DB에 저장된 필드명을 value에 넣어주기 -->
