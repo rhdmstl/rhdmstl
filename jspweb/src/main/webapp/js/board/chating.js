@@ -1,5 +1,6 @@
 // 1. 로그인제 [ 로그인된 경우에만 실행 하겠다.[ 세션호출: jsp vs ajax ]  ]
 let mid = document.querySelector('.mid').value
+
 // 2. 웹소켓 선언 
 let clientsocket = null; 
 // 3. 접속 제어 
