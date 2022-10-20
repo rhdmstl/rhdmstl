@@ -16,15 +16,6 @@
 	<div class="webbox">
 	 
 		<h3>글쓰기</h3> 
-		 <!--
-		<!-- form = 페이지전환 , ajax 페이지전환 없음 -->
-		<!-- 
-		<form method="get" action="/jspweb/board/write">
-			제목 : <input type="text" name="btitle">
-			내용 : <input type="text" name="bcontent">
-			<button type="submit">쓰기</button>
-		</form>
-		-->
 		<form>
 			제목 : 	<input type="text" name="btitle"> <br>
 			<!-- 섬머노트 -->

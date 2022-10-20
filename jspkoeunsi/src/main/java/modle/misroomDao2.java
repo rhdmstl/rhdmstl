@@ -19,14 +19,14 @@ public class misroomDao2 extends misroomDAO{
 			return false;
 	}
 	//아이디 중복체크
-		public boolean idcheck(String mid) {
-			String sql = "select * from member where mid= ?";
-			try {
-				ps = con.prepareStatement(sql);
-				ps.setString(1, mid);
-				rs = ps.executeQuery();
-				if(rs.next()) {return true;}
-			} catch (Exception e) {System.out.println("아이디중복체크 오류"+ e);}
-			return false;
-		}
+	public boolean idcheck(String mid) {
+		String sql = "select * from member where mid= ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, mid);
+			rs = ps.executeQuery();
+			if(rs.next()) {return true;}
+		} catch (Exception e) {System.out.println("아이디중복체크 오류"+ e);}
+		return false;
+	}
 }

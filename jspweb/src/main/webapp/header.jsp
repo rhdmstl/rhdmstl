@@ -54,7 +54,7 @@
 		<li><a href="#"> 트레이닝 </a></li>
 		<li><a href="#"> 할인 </a></li>
 		<li><a href="#"> 남성용 </a></li>
-		
+		<li><a href="/jspweb/board/chating.jsp"> 채팅방 </a></li>
 		<li class="searchbox">
 			<span>
 				<input>
