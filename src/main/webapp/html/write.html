@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/jsptest/write" method="get">
+		제목		<input type="text" class="ttitle" id="ttitle" name="ttitle">
+		내용		<input type="text" class="tcontent" id="tcontent" name="tcontent">
+		작성자	<input type="text" class="twriter" id="twriter" name="twriter">
+		비밀번호	<input type="password" class="tpw" id="tpw" name="tpw">
+		<button type="button" onclick="ttwrite()"> 전송 </button>
+	</form>
+	
+	<div class="listbox">
+		<table class="list">
+			<tr>
+				<td>번호</td>
+				<td>제목</td>
+				<td>작성자</td>
+			</tr>
+		</table>
+	</div>
+	<!-- jquery 라이브러리 (api)-->
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="../js/write.js"></script>
+</body>
+</html>
