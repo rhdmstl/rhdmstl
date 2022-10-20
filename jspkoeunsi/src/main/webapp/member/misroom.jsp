@@ -39,7 +39,6 @@
 	
 	<!-- jquery 라이브러리 (api)-->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-	
 	<script type="text/javascript" src="../js/misroom.js"></script>
 	
 </body>
