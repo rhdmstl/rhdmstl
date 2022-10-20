@@ -32,7 +32,7 @@ public class write extends HttpServlet {
 		boolean result = false;
 				
 		if(result)response.getWriter().print("1");
-		else response.getWriter().print("2");
+		else {response.getWriter().print("2");}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

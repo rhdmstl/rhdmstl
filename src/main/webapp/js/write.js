@@ -10,7 +10,7 @@ function ttwrite(){
 		success : function(re){
 				if(re === '1'){
 					location.href = location.href
-					alert('등록완료')
+					alert('등록되었습니다')
 				}	
 				else{
 					alert('등록실패')

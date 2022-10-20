@@ -20,7 +20,7 @@ public class BoardDao {
 	   }catch (Exception e) {}
 	}
 	   //글쓰기
-	   boolean getwrite() {
+	   boolean getwrite(BoardDto dto) {
 		   String sql = "insert into board(ttitle,tcontent,twriter,tpw) values(?,?,?,?);";
 			try {
 				ps = con.prepareStatement(sql);
