@@ -44,7 +44,6 @@ public class misroomDao2 extends misroomDAO{
 				ps.setString(2, mpw);
 				rs = ps.executeQuery();
 				if(rs.next()) {
-					System.out.println("되니");
 					return 1;	//성공
 				} return 2;	//비번틀림
 			}
@@ -59,7 +58,8 @@ public class misroomDao2 extends misroomDAO{
 			ps.setString(1, mname);
 			ps.setString(2, mphone);
 			rs = ps.executeQuery();
-			if(rs.next()) return rs.getString(3);
+			if(rs.next()) 
+			return rs.getString(3);
 		} catch (Exception e) {System.out.println("아이디찾기" + e);}
 		return null;
 	}
@@ -71,20 +71,23 @@ public class misroomDao2 extends misroomDAO{
 			ps.setString(1, mid);
 			ps.setString(2, mphone);
 			rs = ps.executeQuery();
-			if(rs.next()) return true;
+			if(rs.next()) {
+				return true;
+			}
 		} catch (Exception e) {System.out.println("임시비번"+e);}
-			return false;
+		return false;
 	}
 	//6.임시비번 업뎃
 	public boolean PWchage(String mid , String ranstr) {
-		String sql = " update member set mpw = ? where mid = ? ";
+		String sql = " update misroom set mpw = ? where mid = ? ";
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setString(1, mid);
 			ps.setString(1, ranstr);
+			ps.setString(2, mid);
 			ps.executeUpdate();
+			System.out.println("다오되니");
 			return true;
-		} catch (Exception e) {System.out.println("임시비번"+e);}
+		} catch (Exception e) {System.out.println("임시비번업뎃"+e);}
 		return false;
 	}
 }
