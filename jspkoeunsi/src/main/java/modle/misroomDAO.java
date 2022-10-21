@@ -17,7 +17,7 @@ public class misroomDAO {
             "jdbc:mysql://localhost:3306/room", 
             "root", 
             "1234");
-            System.out.println("연동성공");
+            System.out.println("DB연동 성공");
    }catch (Exception e) {System.out.println("DB연동 실패");}
 }
 }
