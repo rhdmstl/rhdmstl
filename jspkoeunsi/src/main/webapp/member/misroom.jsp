@@ -8,6 +8,8 @@
 </head>
 <body>
 	
+	<%@include file="../header.jsp" %>
+	
 	<form action="/jspkoeunsi/misroom" method="post" class="signupform">
 	
 		<h3 class="pagetitle">회원가입</h3>

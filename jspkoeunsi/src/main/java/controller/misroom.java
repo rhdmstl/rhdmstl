@@ -42,9 +42,6 @@ public class misroom extends HttpServlet {
 		//DTO객체화
 		misroomDTO dto = new misroomDTO(0, mname, mid, mpw, mphone);
 				
-		//통신확인
-		System.out.println(dto.toString());
-				
 		//결과제어
 		boolean result = misroomDao2.getInstance().signup(dto);
 				
