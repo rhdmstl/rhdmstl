@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
+	<%@include file="../header.jsp" %>
+	
 	<h3>로그인</h3>
 		아이디	<input type="text" id="mid"><br>
 		비밀번호	<input type="password" id="mpw">

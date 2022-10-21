@@ -41,7 +41,6 @@ public class misrLogin extends HttpServlet {
 			session.setAttribute(mid, mid);	
 		}
 		response.getWriter().print(result);
-		System.out.println(result);
 	}
 
 	/**

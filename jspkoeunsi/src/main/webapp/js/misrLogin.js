@@ -1,19 +1,17 @@
 /**
  * 
  */
- alert('로그인')
+ alert('로그인해주세요')
  
   function login(){
 	let mid = document.querySelector('#mid').value
 	let mpw = document.querySelector('#mpw').value
 	let loginbox = document.querySelector('#loginbox')
 	
-	console.log('되니')
 	$.ajax({
 		url : "/jspkoeunsi/misrLogin",
 		data : {"mid" : mid , "mpw" :mpw},
 		success : function(re){
-			console.log('되니22')
 			console.log(re)
 			if(re === '1'){
 				alert('성공')
