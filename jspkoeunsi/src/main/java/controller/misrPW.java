@@ -28,7 +28,7 @@ public class misrPW extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	 */                  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
@@ -36,6 +36,7 @@ public class misrPW extends HttpServlet {
 		String mphone = request.getParameter("mphone");
 		
 		boolean result = misroomDao2.getInstance().findPW(mid, mphone);
+		System.out.println(result);
 		//랜덤 문자열 저장할 공백임
 		String ranstr = "";
 		// 
