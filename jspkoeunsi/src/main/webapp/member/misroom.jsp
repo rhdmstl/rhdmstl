@@ -15,7 +15,7 @@
 		<div class="col"></div>
 		아이디	<input type="text" id="mid" name="mid" onkeyup="mevent2()">
 		<div class="col"></div>
-		비밀번호	<input type="password" id="mpw" name="mpw" onkeyup="mevent3()">
+		비밀번호	<input type="text" id="mpw" name="mpw" onkeyup="mevent3()">
 		<div class="col"></div>
 		전화번호	<input type="text" id="mphone" name="mphone" onkeyup="mevent4()">
 		<div class="col"></div>

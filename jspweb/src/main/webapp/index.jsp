@@ -16,9 +16,10 @@
 	
 	<img alt="" src="image/img.jpg">
 	
-	<div class="webbox">
+	<div class="box">
+		<h3>메인페이지</h3>
 	</div>
-	<h3>메인페이지</h3>
+	
 	
 </body>
 </html>
