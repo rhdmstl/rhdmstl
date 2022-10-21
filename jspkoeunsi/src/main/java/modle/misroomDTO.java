@@ -1,6 +1,7 @@
 package modle;
 
 public class misroomDTO {
+	//필드
 	private int mno;
 	private String mname;
 	private String mid;
