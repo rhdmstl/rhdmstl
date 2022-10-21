@@ -26,6 +26,7 @@ public class misrID extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//요청
 		request.setCharacterEncoding("UTF-8");
 		String mname = request.getParameter("mname");
 		String mphone = request.getParameter("mphone");
