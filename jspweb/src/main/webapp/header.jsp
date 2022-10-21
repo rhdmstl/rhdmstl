@@ -5,7 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>이젠 쇼핑몰</title>
-	<!-- 뷰포트 -->
+	<!-- 부트스트랩 css -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<!-- 반응형 뷰포트 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- 폰트어썸 -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
@@ -66,6 +68,8 @@
 </div>
 		<!-- jquery 라이브러리 (api)-->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<!-- 부트스트랩 js -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script><!-- 뷰포트 -->
 	
 </body>
 </html>
