@@ -36,7 +36,6 @@ public class finepw extends HttpServlet {
 			}//for e
 			//회원 비밀번호를 임시번호로 교체
 			memberDao.getInstance().passwordchange(mid, randstr);
-			//메일전송
 		}//if e
 		response.getWriter().printf(randstr);	//ajax 전송
 	}
