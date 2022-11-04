@@ -16,10 +16,6 @@
 		response.sendRedirect("/jspweb/index.jsp");
 	%>
 	
-<!-- <div class="webbox">
-		<h3>로그아웃이 완료되었습니다</h3>
-		
-	</div>
- -->
+
 </body>
 </html>

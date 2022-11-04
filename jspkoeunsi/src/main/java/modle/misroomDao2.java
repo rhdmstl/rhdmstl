@@ -21,7 +21,7 @@ public class misroomDao2 extends misroomDAO{
 	}
 	//2.아이디 중복체크
 	public boolean idcheck(String mid) {
-		String sql = "select * from misroom where mid= ?";
+		String sql = "select * from misroom where mid = ?";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, mid);

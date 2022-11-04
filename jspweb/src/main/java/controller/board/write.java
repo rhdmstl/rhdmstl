@@ -49,7 +49,8 @@ public class write extends HttpServlet {
 		// new MultipartRequest(1.요청방식, 2.파일저장경로, 3.최대용량범위, 4.인코딩타입, 5.기타(보안기능));
 		// 1.저장경로[프로젝트 저장]
 		String uploadpath = request.getSession().getServletContext().getRealPath("/upload") ; // jspweb/폴더명
-		MultipartRequest multi = new MultipartRequest(request, // 요청방식
+		MultipartRequest multi = new MultipartRequest(
+				request, // 요청방식
 				uploadpath, // 저장경로
 				1024 * 1024 * 10, // 10mb
 				"UTF-8", // 인코딩
@@ -63,7 +64,6 @@ public class write extends HttpServlet {
 		String bcontent = multi.getParameter("bcontent");
 		System.out.println(bcontent);// 확인
 
-	
 		// 어떤파일을 업로드 했는지 DB에 저장할 첨부파일된 경로/이름 호출
 		String bfile = multi.getFilesystemName("bfile");
 		System.out.println(bfile);

@@ -28,13 +28,10 @@ function bview(){
 					maxHeight : null , 
 					minHeight : 300
 				});
-				
 			}); 
-			/*---------------*/
 		}
 	})
 }
-
 
 // 2. 첨부파일 삭제 버튼을 눌렀을때 ( 1.경로 2.보낼데이터 3.받을데이터 )
 function bfiledelete(){
@@ -59,6 +56,7 @@ function bfiledelete(){
 		})
 	}
 }
+
 function bupdate(){
 	
 	let form = document.querySelector('form');
@@ -78,8 +76,5 @@ function bupdate(){
 			if( re === 'true' ){ alert('수정성공'); location.href = 'view.jsp' }
 			else{ alert('수정실패') }
 		}
-		
 	})
-	
-	
 }

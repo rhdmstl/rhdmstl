@@ -15,11 +15,13 @@
  function mevent2(){
 	let mid = document.querySelector("#mid").value  //아이디를 입력할때마다 이벤트발생[keyup]
 	let midj = /^[a-z0-9]{5,20}$/					//입력받은 아이디 호출
+	alert('dd')
 	if(midj.test(mid)){								//정규표현식 작성
 		$.ajax({									//정규표현식 검사
-			url : "/jspkoeunsi/member/misroom.jsp",				//아이디 중복체크[비동기식 ajax]
-			data : { "mid" : mid},					
+			url : "/jspkoeunsi/misrIDcheck",				//아이디 중복체크[비동기식 ajax]
+			data : { "mid" : mid},	
 			success : function( re ){
+				alert(re)
 				if(re === 'true'){col[1].innerHTML = '사용중인 아이디입니다'}
 				else{col[1].innerHTML = '성공'}
 			}

@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+img{width: 100%;}
+infobox{
+	border-top: 1px solid black;
+	margin-left: 3%;
+}
+.pname{/*제품명*/
+	margin-top: 5%;
+	font-family: 'RixInooAriDuriR'; 
+}
+.pcomment{/*제품설명*/font-size: 9px;}
+.pricebox{margin: 5% 0%;}
+.pdiscount{/*할인율*/ 
+	font-family: 'RixInooAriDuriR';
+	color: red;
+	font-size: 20px;
+	padding-right: 3%;
+}
+.pprice{/*원가*/
+	text-decoration: line-through; /*중간 실선*/
+	color: #999999;
+	padding-right: 3%;
+}
+.psale{ /*판매가*/
+	font-family: 'RixInooAriDuriR';
+	font-size: 20px;
+}
+.info_t{
+	margin: 5% 0%;
+	font-size: 15px;
+}
+.select_t{margin: 5% 0%;}
+/*//////////////////////////////////////////////////////////////////////////////*/
+.amount_btn{
+	display: flex;
+	background-color: white;
+	font-size: 5px;
+	padding: 0px 10px;
+	border: 1px solid #999999;
+}
+.cancel_btn{ /*선택옵션 제거*/
+	background-color: white;
+	font-size: 15px;
+	border: none;
+	padding: 5px;
+}
+.pointbox{
+	font-size: 8px;
+	color: #999999;
+}
+.totalprice{/*선택된 총 가격*/
+	text-align: right;
+	font-size: 20px;
+	font-family: 'RixInooAriDuriR';
+}
+.button{
+	margin: 7% 0%;
+	font-size: 15px;
+}
+.btnbox button{ /*버튼 상자안에 있는 버튼*/
+	background-color: white;
+	border: 1px solid #999999;
+	size: 30%;
+	padding: 20px 10px;
+	margin-right: 2%;
+}
+#btn1{ background-color: black; color: white; }
+#btn2{ background-color: black; color: white; }
+#btn3{ color: red; }

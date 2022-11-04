@@ -48,9 +48,6 @@ public class signup extends HttpServlet {
 		if(result) {response.sendRedirect("/jspweb/member/login.jsp");}
 		else {System.out.println("/jspweb/member/signup.jsp");}
 		
-		if(result) {System.out.println("회원가입 성공");}
-		else {System.out.println("회원가입 실패");}
-		doGet(request, response);
 	}
 
 }

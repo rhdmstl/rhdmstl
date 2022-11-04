@@ -9,10 +9,12 @@ bview() //  게시물 상세페이지가 열렸을때 실행되는 함수
 
 // 1. 해당 게시물 출력 
 function bview(){
+	alert('상세보기')
 	$.ajax({
 		url : "/jspweb/board/view" , 
 		async : false ,	/* 동기식 */
 		success : function( re ){ 
+			alert(re)
 			let board  = JSON.parse( re )
 			console.log( board )
 			document.querySelector('.bno').innerHTML = board.bno;
@@ -20,7 +22,7 @@ function bview(){
 			document.querySelector('.bcontent').innerHTML = board.bcontent;
 			document.querySelector('.mid').innerHTML = board.mid;
 			/* 절대경로 : 				http://localhost:8080/jspweb/board/filedown 
-			 상대경로 : 현재 위치 기준[ http://localhost:8080/jspweb/js/view.js ]
+			   상대경로 : 현재 위치 기준[ http://localhost:8080/jspweb/js/view.js ]
 						../board/filedown
 			
 			 	<a href="URL?변수명=데이터">	: get메소드로 해당 URL 데이터 전송가능 
@@ -46,7 +48,6 @@ function bview(){
 				let updatebtn = '<button><a href="../board/update.jsp">수정</a></button>'
 				btnbox.innerHTML += updatebtn;
 			}
-
 		}
 	})
 	////////////////// 댓글출력 ///////////////////

@@ -8,15 +8,20 @@
 		url:"/jspweb/member/info",
 		success : function(result){
 		alert(result)
+		
+		
 		let member = JSON.parse( result )
-			document.querySelector("#mno").value = member.mno
-			document.querySelector("#mid").value = member.mid
+		
+		console.log( member )
+		
+			document.querySelector("#mno").innerHTML = member.mno
+			document.querySelector("#mid").innerHTML = member.mid
 			document.querySelector("#mname").value = member.mname
 			document.querySelector("#mphone").value = member.mphone
 			document.querySelector("#memail").value = member.memail
 			//document.querySelector("#maddress").value = member.maddress
-			document.querySelector("#mdate").value = member.mdate
-			document.querySelector("#mpoint").value = member.mpoint
+			document.querySelector("#mdate").innerHTML = member.mdate
+			document.querySelector("#mpoint").innerHTML = member.mpoint
 			getmemberlist();
 		}
 	})
@@ -42,6 +47,7 @@ function getmemberlist(){
 			for(let i = 0 ; i < memberlist.length ; i++){
 				let m = memberlist[i]
 				//4.해당 인덱스의 값 가져오기
+				console.log( m )
 				tag += '<tr>'+
 		             '<td> ' +m.mno + '</td>'+
 		             '<td> ' +m.mid + ' </td>'+

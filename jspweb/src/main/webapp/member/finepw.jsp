@@ -14,9 +14,9 @@
 		아이디 : <input type="text" id="mid">
 		이메일 : <input type="text" id="memail">
 		<div id="resultbox"></div> <!-- 결과메세지 -->
-		<button type="button" onclick="finepw()">비밀번호찾기</button>
+		<button type="button" onclick="finepw()"> 비밀번호찾기 </button>
 	</div>
 	
-	<script src="../js/member/fineid.js" type="text/javascript"></script>
+	<script src="../js/member/finepw.js" type="text/javascript"></script>
 </body>
 </html>

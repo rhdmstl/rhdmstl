@@ -23,7 +23,7 @@ let bicon = '<i class="fas fa-ban"></i>';
  function mevent1(){
 	let mid = document.querySelector("#mid").value  //아이디를 입력할때마다 이벤트발생[keyup]
 	let midj = /^[a-z0-9]{5,20}$/					//입력받은 아이디 호출
-	if(midj.test(mid)){								//정규표현식 작성
+	if(midj.test(mid)){								//정규표현식 작성.
 		$.ajax({									//정규표현식 검사
 			url : "/jspweb/member/idcheck",				//아이디 중복체크[비동기식 ajax]
 			data : { "mid" : mid},					
@@ -41,15 +41,7 @@ let bicon = '<i class="fas fa-ban"></i>';
 	if(mpwj.test(mpw)){col3[1].innerHTML = sicon; mevent3()}
 	else{col3[1].innerHTML = bicon+'소문자/숫자 조합 5~20글자'}
 }
-/*비밀번호 확인 *---------------------------------------*/
- function mevent3(){
-	let mpw = document.querySelector("#mpw").value //비밀번호 아이디 호출
-	let mpwconfirm = document.querySelector("#mpwconfirm").value
-	let mpw2j = /^[a-zA-Z0-9]{8,20}$/
-	if(!mpw2j.test(mpwconfirm)){col3[1].innerHTML = bicon+ '소문자/숫자 조합 5~20글자'}
-	else if(mpwconfirm != mpw){col3[1].innerHTML = bicon+'비밀번호가 서로 다릅니다'}
-	else{col3[1].innerHTML = sicon; mevent2();}
-}
+
 /*이름 *---------------------------------------*/
  function mevent4(){
 	let mname = document.querySelector("#mname").value
@@ -115,7 +107,6 @@ let bicon = '<i class="fas fa-ban"></i>';
 /**
  * 	카카오우편API
  */
- alert("js실행")
   function sample4_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {

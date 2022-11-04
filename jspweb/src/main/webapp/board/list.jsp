@@ -16,31 +16,11 @@
 	<%@include file="../header.jsp" %>
 	<div class="webbox">
 		<a href="write.jsp"> 글쓰기 </a>
-		<!-- JSP로 테이블 표시   [ 서블릿,js 제외한 ] -->
-		<%-- <table>
-			<tr>
-				<th> 번호 </th> <th> 제목 </th> <th> 작성자 </th>
-			</tr>
-			<%  // 스크립트 태그 : html에 java 작성할수 있는 공간
-			
-			ArrayList<BoardDto> list = boardDao.getInstance().getlist();
-			
-			for( int i = 0 ; i<list.size() ; i++ ){
-			%>
-				<tr>
-					<td> <%= list.get(i).getBno() %></td>
-					<td> <%= list.get(i).getBtitle() %></td>
-					<td> <%= list.get(i).getMno() %></td>
-				</tr>
-			<% 
-			}			// <%= 표현식(호출) 
-			%>
-		</table> --%>
 		
 		<!-- JS로 테이블 표시    [ HTML(JSP) --- JS ---- 서블릿 --- DAO ] -->
 		<div>게시물 수 : <div class="totalsize"></div></div>
 		
-		<div >
+		<div>
 			<select class="listsize" onchange="blistsize()">
 				<option class="5">5</option>
 				<option class="10">10</option>
@@ -70,7 +50,6 @@
 			<input placeholder="검색어" class="keyword">
 			<button type="button" onclick="bsearch()">검색</button>
 			
-			
 		</div>
 		
 	</div>
@@ -84,3 +63,23 @@
 
 <!-- <option value="">제목</option>
 DB에 저장된 필드명을 value에 넣어주기 -->
+<!-- JSP로 테이블 표시   [ 서블릿,js 제외한 ] -->
+		<%-- <table>
+			<tr>
+				<th> 번호 </th> <th> 제목 </th> <th> 작성자 </th>
+			</tr>
+			<%  // 스크립트 태그 : html에 java 작성할수 있는 공간
+			
+			ArrayList<BoardDto> list = boardDao.getInstance().getlist();
+			
+			for( int i = 0 ; i<list.size() ; i++ ){
+			%>
+				<tr>
+					<td> <%= list.get(i).getBno() %></td>
+					<td> <%= list.get(i).getBtitle() %></td>
+					<td> <%= list.get(i).getMno() %></td>
+				</tr>
+			<% 
+			}			// <%= 표현식(호출) 
+			%>
+		</table> --%>

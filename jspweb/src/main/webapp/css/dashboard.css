@@ -1,0 +1,19 @@
+@charset "UTF-8";
+*{
+	padding: 0px; margin: 0px;
+}
+/*사이드바*/
+.sidebar{
+	background-color: black; color: white; width: 200px;
+	position: absolute; top: 0;	/*body기준으로 위에서부터 0만큼 이동*/
+	bottom: 0; left: -170px;/*(메뉴바 숨기기)펼쳣다 넣었다 할려면 css에서 먼저 넣어놔줘야함*/
+	transition : 0.3s /*[애니메이션 효과] 트랜지션(자동완성 x) 속도조절*/
+}
+.side_menu{padding: 50px;}
+/*사이드바 목록*/
+.side_item{ margin: 30px 0; }
+.side_item li{list-style: none;}
+.side_item a{ color: white; text-decoration: none; }
+.sidebar h1{margin: 20px;}
+
+

@@ -20,13 +20,7 @@ public class misroom extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//아이디중복체크
-		request.setCharacterEncoding("UTF-8");
-		String mid = request.getParameter("mid");
 		
-		boolean result =  misroomDao2.getInstance().idcheck(mid);
-		response.setCharacterEncoding("UTF-8");
-		response.getWriter().print(result);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

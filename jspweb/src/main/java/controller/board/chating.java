@@ -39,12 +39,12 @@ public class chating {
 		clirnts.put(session , mid);
 					//키     : 값 -> 엔트리
 		
-		
-		//접속했다고 다른사람에게 알리기
-		for(Session s : clirnts.keySet()) {
-			///map에 저장된 모든 key호출
-			s.getBasicRemote().sendText(clirnts.get(s)+"님이 접속했습니다");
-		}								//map.get(키) ->값 호출
+//		
+//		//접속했다고 다른사람에게 알리기
+//		for(Session s : clirnts.keySet()) {
+//			///map에 저장된 모든 key호출
+//			s.getBasicRemote().sendText(clirnts.get(s)+"님이 접속했습니다");
+//		}								//map.get(키) ->값 호출
 	}
 	/////////////////접속알람 끝////////////////////////////////////////////////////
 	@OnClose //웹소켓 나갓을때

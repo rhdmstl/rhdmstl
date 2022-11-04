@@ -6,7 +6,7 @@
  function finepw(){
 	let mid = document.querySelector('#mid').value
 	let memail = document.querySelector('#memail').value
-	let finepwconfirmbox = document.querySelector('#finepwconfirmbox')
+	let finepwconfirmbox = document.querySelector('#resultbox')
 	
 	$.ajax({
 		url : "/jspweb/member/finepw",

@@ -67,5 +67,4 @@ public class bupdate extends HttpServlet {
 		//결과 반환
 		response.getWriter().print(result);
 	}
-
 }

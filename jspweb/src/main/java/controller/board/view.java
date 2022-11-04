@@ -53,6 +53,7 @@ public class view extends HttpServlet {
 		
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(object);
+		System.out.println("뷰서블릿"+object);
 
 	}
 

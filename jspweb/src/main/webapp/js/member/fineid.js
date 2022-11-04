@@ -21,24 +21,4 @@
 		}
 	})
 }
- /*비번 찾기------------------------------------------------------ */
-
- function finepw(){
-	let mid = document.querySelector('#mid').value
-	let memail = document.querySelector('#memail').value
-	let resultbox = document.querySelector('#resultbox')
-	
-	$.ajax({
-		
-		url : "/jspweb/member/finepw",
-		data : {"mid" : mid , "memail" : memail},
-		success : function(re){
-			alert(re)
-			if(re === ''){
-				resultbox.innerHTML = '동일한 회원 정보가 없습니다'
-			}else{
-				resultbox.innerHTML = '임시비밀번호 : ' + re
-			}
-		}
-	})
-}
+ /* 비번찾기 스크립트가 따로 있어서 삭제 */

@@ -52,7 +52,6 @@ function blistsize(){
 				html +=
 					'<tr>'+
 						'<td>'+b.bno+'</td>'+
-							//'<td><a href="http://localhost:8080/jspweb/board/view.jsp?bno='+b.bno+'">'+b.btitle+'</a></td>'+
 							'<td onclick="viewload('+b.bno+')">'+b.btitle+'</td>'+
 							'<td>'+b.mid+'</td>'+
 							'<td>'+b.bdate+'</td>'+
@@ -90,16 +89,16 @@ function blistsize(){
 		}
 	})
 }
-//상세페이지로 이동
+
+ //상세페이지로 이동
  function viewload( bno ){
 	$.ajax({
-		url : "http://localhost:8080/jspweb/board/viewload" , 
+		url : "/jspweb/board/viewload" , 
+		type : "post",
 		data : { "bno" : bno },
 		success : function( re ){
-			location.href = "http://localhost:8080/jspweb/board/view.jsp"
+			console.log(re)
+			location.href = "/jspweb/board/view.jsp"
 		}
 	})
 }
- 
- 
- 
