@@ -22,9 +22,6 @@
 	      <img src="/jspweb/image/img.jpg" class="d-block w-100" alt="...">
 	    </div>
 	    <div class="carousel-item ">
-	      <img src="/jspweb/image/헤더2.jpg" class="d-block w-100" alt="...">
-	    </div>
-	    <div class="carousel-item ">
 	      <img src="/jspweb/image/헤더4.jpg" class="d-block w-100" alt="...">
 	    </div>
 	    <div class="carousel-item ">

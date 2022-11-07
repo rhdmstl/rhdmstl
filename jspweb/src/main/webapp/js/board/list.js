@@ -67,7 +67,7 @@ function blistsize(){
 				if(page <= 1){
 					pagehtml += '<button onclick="list('+(page)+')">이전</button>'
 					}
-				else{
+				else{//현재페이지보다 뒤로
 					pagehtml += '<button onclick="list('+(page-1)+')">이전</button>'
 					}
 				
@@ -75,6 +75,7 @@ function blistsize(){
 				for(let page = boards.startbtn ; page <=boards.endbtn ; page++){
 					pagehtml += '<button type="button" onclick="list('+page+')">'+page+'</button>'
 				}
+				console.log(page)
 				//다음버튼
 				if(page >= boards.totalpage){
 					pagehtml += '<button onclick="list('+page+')">다음</button>'

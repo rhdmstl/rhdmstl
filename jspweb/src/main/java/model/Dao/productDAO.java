@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import controller.admin.regist;
 import controller.board.list;
 import model.Dto.cartDTO;
+import model.Dto.orderDto;
 import model.Dto.pcategoryDTO;
 import model.Dto.prouctDTO;
 import model.Dto.stockDto;
@@ -62,7 +63,7 @@ public class productDAO extends Dao{
 		if(option.equals("all")) {
 			sql = " select * from product ";
 		}else if(option.equals("pactive1")) {
-			sql = " select * from product where pactive = 0 order by pdate desc ";
+			sql = " select * from product where pactive = 1 order by pdate desc ";
 		}
 		try {
 			ps = con.prepareStatement(sql);
@@ -75,7 +76,7 @@ public class productDAO extends Dao{
 						rs.getString(7),rs.getString(8),rs.getInt(9));
 				list.add(dto);
 			}
-			System.out.println("다오"+list);
+			System.out.println("다오"+list); //리스트에 안담김
 			return list;
 		} catch (Exception e) {System.out.println("제품 출력"+e);}
 		return null;
@@ -161,32 +162,29 @@ public class productDAO extends Dao{
 		} catch (Exception e) {System.out.println("재고출력"+e);}
 			return null;
 	}
-	//10.제품 찜하기
-	public int setPlike(int pno , int mno) {
-		String sql = " select * from plike where pno = ? and mno = ? ";	//검색[해당 찜하기 여부확인]
-		try { 
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, pno);
-			ps.setInt(2, mno);
-			rs = ps.executeQuery();
-			if(rs.next()) { //찜하기 있는 경우(검색결과 있으면 취소)
-				sql = " delete from plike where pno = ? and mno = ? ";
-				ps = con.prepareStatement(sql);
-				ps.setInt(1, pno);
-				ps.setInt(2, mno);
-				ps.executeUpdate();
-				return 1; //찜하기 취소
-			}else {//찜하기가 없는 경우(검색결과 없으면 등록)
-				sql = " insert into plike ( pno , mno ) values ( ? , ? ) ";
-				ps.setInt(1, pno);
-				ps.setInt(2, mno);
-				ps = con.prepareStatement(sql);
-				ps.executeUpdate();
-				return 2;//찜하기 등록
-			} 
-		} catch (Exception e) {System.out.println("찜하기 오류"+e);}
-				return 3;//찜하기 오류
-	}
+	// 10 . 제품 찜하기
+    public int setPlike( int pno , int mno ){
+       String sql = "select * from plike where pno = ? and mno = ? ";   // 검색 [ 해당 찜하기 여부 있는지 체크 ]
+       try {
+          ps = con.prepareStatement(sql);
+          ps.setInt(1, pno);
+          ps.setInt(2, mno);
+          rs = ps.executeQuery();
+          if(rs.next() ) {   // 이미 찜하기가 되어 있는 경우 , 검색 결과가 있으면
+             sql = "delete * from plike where pno = ? and mno = ? ";
+             ps = con.prepareStatement(sql);
+             ps.setInt(1, pno);
+             ps.setInt(2, mno);
+             ps.executeUpdate(); return 1;
+          }else{   // 찜하기가 없는 경우 , 검색 결과가 없으면 => 등록
+             sql = "insert into plike (pno , mno) values( ? , ? ) ";
+             ps = con.prepareStatement(sql);
+             ps.setInt(1, pno);
+             ps.setInt(2, mno);
+             ps.executeUpdate(); return 2;
+          }
+       } catch (Exception e) {System.out.println(e);} return 3;
+    }
 	//11.장바구니에 선택한 제품 옵션 저장
 	public boolean setcart(int pno , String psize , int amount , String pcolor , int mno) {
 		String sql = "insert into cart(amount , pstno, mno) "
@@ -205,12 +203,12 @@ public class productDAO extends Dao{
 		String sql = "select"
 				+ "   c.cartno, pst.pstno, p.pname, p.pimg, "
 				+ "     p.pprice,p.pdiscount, pst.pcolor, ps.psize, c.amount"
-				+ "from \r\n"
+				+ " from "
 				+ "   cart c natural join "
 				+ "   productstock pst natural join"
 				+ "    productsize ps natural join"
-				+ "    product p"
-				+ "where"
+				+ "    product p "
+				+ " where"
 				+ "   c.mno = "+mno;
 		try {
 			ps = con.prepareStatement(sql);
@@ -218,11 +216,50 @@ public class productDAO extends Dao{
 			while(rs.next()) {
 				cartDTO dto = new cartDTO(
 				rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), 
-				rs.getInt(5),rs.getFloat(5), rs.getString(6),rs.getString(7), rs.getInt(8));
+				rs.getInt(5),rs.getFloat(6), rs.getString(7),rs.getString(8), rs.getInt(9));
 				list.add(dto);
 			}return list;
 		} catch (Exception e) {System.out.println("장바구니 호출오류"+e);}
 		return null;
+	}
+	//13. 
+	public boolean setOrder(ArrayList<orderDto> list) {
+	System.out.println("프로덕트다오 ::::"+list);
+	//1. 주문 레코드 생성
+	String sql = " insert into porder values(?, ?, ?, ?, ?, ?, ?) ";
+	try {
+		ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+		for(int i=0;i<list.size();i++) {
+			ps.setInt(1, list.get(i).getOno());
+			ps.setString(2, list.get(i).getOname());
+			ps.setString(3, list.get(i).getOphon());
+			ps.setString(4, list.get(i).getOaddress());
+			ps.setString(5, list.get(i).getOrequest());
+			ps.setString(6, list.get(i).getOdate());
+			ps.setInt(7, list.get(i).getMno());
+			ps.executeUpdate();
+			rs = ps.getGeneratedKeys();
+		}
+		if (rs.next()) {
+			int ono = rs.getInt(1); // pk 호출
+			//odno=0, odamaount=1, odprice=14000, odactive=0, pstno=1]]
+			// 2. 색상재고 등록
+			sql = " insert into porderdetail(ono,odno,odamaount,odprice,odactive,pstno) values(?,?,?,?,?,?)";
+			ps = con.prepareStatement(sql);
+			for(int i=0;i<list.size();i++) {
+			ps.setInt(1, list.get(i).getOno());
+			ps.setInt(2, list.get(i).getOdno());
+			ps.setString(3, list.get(i).getOaddress());
+			ps.setInt(4, list.get(i).getOdprice());
+			ps.setInt(5, list.get(i).getOdactive());
+			ps.setInt(6, list.get(i).getPstno());
+			ps.executeUpdate();
+			}
+			return true;
+		}
+			} catch (Exception e) {System.out.println("회원정보 불러오기"+e);}
+	//2. 위에서 생성된 주문번호를 이용해서 주문된제품[list]의 개수만큼 주문상세 레코드를 생성
+			return false;
 	}
 }
 

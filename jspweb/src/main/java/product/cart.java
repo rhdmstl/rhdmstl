@@ -49,7 +49,6 @@ public class cart extends HttpServlet {
 		//4.응답
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(array);
-		System.out.println("**서블릿 : "+array);
 	}
 
 	//스크립트에서 정보를 받아옴
@@ -91,7 +90,7 @@ public class cart extends HttpServlet {
 			}
 		} catch (Exception e) {System.out.println("형변환 오류"+e);}
 				//3.응답
-				request.setCharacterEncoding("UTF-8");
+				response.setCharacterEncoding("UTF-8");
 				//옵션을 다 저장한 경우
 				response.getWriter().print("true");
 		

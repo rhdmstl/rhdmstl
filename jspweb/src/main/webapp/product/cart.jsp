@@ -8,9 +8,9 @@
 </head>
 <body>
 	
-	<%@include file="../header.jsp" %>
+	<%@include file = "../header.jsp" %>
+	<div  class="container">
 	
-	<div>
 		<table class="table cart_t">
 			
 		</table>
@@ -18,12 +18,10 @@
 		<button type="button">선택삭제</button>
 		<button type="button">전체삭제</button>
 		<button type="button">쇼핑하기</button>
-		<!-- 아임포트 결제 버튼 -->
-		<button type="button" onclick="requestPay()">결제하기</button> 
+		
+		<!-- 1. 아임포트 결제 버튼 -->
+		<button onclick="payload()" type="button">결제하기</button>
 	</div>
-	
-	
-	
 	
 	<!-- iamport.payment.js[결제 api] -->
 	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>

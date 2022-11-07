@@ -75,6 +75,7 @@ public class regist extends HttpServlet {
 			object.put("pcno",dto.getPcno());
 			
 			//응답
+			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(object);
 		}
 	}
@@ -92,22 +93,14 @@ public class regist extends HttpServlet {
 			// 해당 저장경로에 첨부파일 업로드
 		
 		int pno = Integer.parseInt( multi.getParameter("pno") );	// 수정할 대상 
-		System.out.println("수정풋"+pno);
 		byte pactive = Byte.parseByte(multi.getParameter("pactive")); // 제품상태
-		System.out.println("수정풋"+pactive);
 		String pname = multi.getParameter("pname");		
-		System.out.println("수정풋"+pname);
 		String pcomment = multi.getParameter("pcomment");
-		System.out.println("수정풋"+pcomment);
 		int pprice = Integer.parseInt( multi.getParameter("pprice"));	
-		System.out.println("수정풋"+pprice);
 		float pdiscount = Float.parseFloat( multi.getParameter("pdiscount") );
-		System.out.println("수정풋"+pdiscount);
 		String pimg = multi.getFilesystemName("pimg"); 
-		System.out.println("수정풋"+pimg);
 		//수정대상
 	    int pcno = Integer.parseInt(multi.getParameter("pcno"));
-	    System.out.println("수정풋"+pcno);
 	    
 	    // * 기존첨부파일 변경 여부 판단 
 	 	boolean bfilechange = true;
@@ -123,6 +116,7 @@ public class regist extends HttpServlet {
 	 	//4.dao 처리 [ 업데이트 = 새로운 첨부파일 ]
 	 	if(result && bfilechange) { deletefile(request.getSession(), dto.getPimg());}
 	 	
+	 	response.setCharacterEncoding("UTF-8");
 	 	response.getWriter().print(result);
 	 	System.out.println("수정"+result);
 	}
@@ -138,6 +132,7 @@ public class regist extends HttpServlet {
 		boolean result = new productDAO().deleteproduct(pno);
 		if(result) {deletefile(request.getSession(), dto.getPimg());}
 		//응답
+		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(result);
 		System.out.println("삭제"+result);
 	}
@@ -170,6 +165,7 @@ public class regist extends HttpServlet {
 		prouctDTO dto = new prouctDTO(0, pname, pcomment, pprice, pdiscount, (byte)0,  pimg , null, pcno);
 		
 	    boolean result = new productDAO().setproduct(dto);
+	    response.setCharacterEncoding("UTF-8");
 	    response.getWriter().print(result);
 		
 	}
