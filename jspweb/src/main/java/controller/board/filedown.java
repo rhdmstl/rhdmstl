@@ -33,6 +33,7 @@ public class filedown extends HttpServlet {
 		//1. 다운로드 할 파일명 요펑
 		request.setCharacterEncoding("UTF-8");
 		String bfile = request.getParameter("bfile");
+		System.out.println("요청"+bfile);
 		
 		/*
 		 * //2.경로+파일명으로 해당파일 위치 찾기 String uploadpath =
@@ -41,6 +42,7 @@ public class filedown extends HttpServlet {
 		String uploadpath = request.getSession().getServletContext().getRealPath("/upload/"+bfile) ; // jspweb/폴더명
 		//3.해당 경로의 파일을 객체화[java에서 파일클래스 = file]
 		File file = new File(uploadpath);	//해당 경로에 존재하는 파일을 객체화 불러오기[해당 파일을 조작/메소드]
+		System.out.println("서블릿"+file);
 		
 		//4.HTTP에서 지원하는 다운로드형식 메소드 [response] (필수아님 없어도 실행됨)
 		response.setHeader("Content-Disposition",//다운로드형식 HML에서 지원[브라우저 차이잇음]
@@ -52,6 +54,7 @@ public class filedown extends HttpServlet {
 		BufferedInputStream fin = new BufferedInputStream(new FileInputStream(file));
 			//2.파일의 바이트 길이만큼 배열선언
 		byte[] bytes = new byte[(int)file.length()];
+		System.out.println("바이트"+bytes);
 		
 		//3.파일의 내용[바이트]읽어오기
 		fin.read(bytes);	//읽어온 바이트를 바이트배열에 저장
@@ -62,6 +65,7 @@ public class filedown extends HttpServlet {
 		
 		//배열에 존재하는 바이트 출력
 		fout.write(bytes);	//바이트배열에 저장된 바이트를 모두 내보내기
+		System.out.println("서블릿"+fout);
 		
 			//스트림은 버퍼(전송시 사용되는 임시메모리 공간 = 대용량에서는 꼭 초기화해야함)
 		fout.flush();//출력스트림 버처 초기화

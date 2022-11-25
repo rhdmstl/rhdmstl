@@ -72,9 +72,7 @@ function blistsize(){
 					}
 				
 				//페이지 번호 버튼
-				for(let page = boards.startbtn ; page <=boards.endbtn ; page++){
-					pagehtml += '<button type="button" onclick="list('+page+')">'+page+'</button>'
-				}
+				f 
 				console.log(page)
 				//다음버튼
 				if(page >= boards.totalpage){
@@ -82,7 +80,7 @@ function blistsize(){
 					}
 				else{
 					 pagehtml += '<button onclick="list('+page+1+')")">다음</button>'; 
-					 }
+					 } 
 			//전체
 			document.querySelector('.pagebox').innerHTML = pagehtml;
 			//검색된 게시물 수 표기

@@ -12,23 +12,24 @@
 	<div class="container">
 	
 	<!-- -9월 서울아파트 실거래가 테이블 -->
-	<table class="table apitable1" id="apitable">
-		<tr>
-			<th>시군구</th>
-			<th>번지 / 본번 / 부번</th>
-			<th>단지명</th>
-			<th>전용면적</th>
-			<th>계약년월</th>
-			<th>계약일</th>
-			<th>거래금액(만원)</th>
-			<th>층</th>
-			<th>건축년도</th>
-			<th>도로명</th>
-			<th>해체사유발생일</th>
-			<th>거래유형</th>
-			<th>중개사소재지</th>
-		</tr>
-	</table>	
+	 <table class="table apitable1">
+      <tr>
+         <th> 시군구 </th>
+         <th> 번지본번부번 </th>
+         <th> 단지명 </th>
+         <th> 전용면적 </th>
+         <th> 계약년월 </th>
+         <th> 계약일 </th>
+         <th> 계약금액 </th>
+         <th> 층 </th>
+         <th> 건축년도 </th>
+         <th> 도로명 </th>
+         <th> 해제사유발생일 </th>
+         <th> 거래유형 </th>
+         <th> 중개사소재지 </th>
+      </tr>
+   </table>
+
 	<!-- 1.지도를 표시할 div 입니다 -->
 	<div id="map" style="width:100%;height:350px;"></div>
 	<!-- 약국 마커 -->

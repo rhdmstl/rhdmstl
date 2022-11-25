@@ -8,8 +8,8 @@ let clientsocket = null;
 if( mid != 'null'){
 	// 웹소켓에 서버소켓으로 연결[매핑]
 	clientsocket 
-	= new WebSocket('ws://localhost:8080/jspweb/chating/'+mid);
-	// 아래에서 구현 메소드를 객체에 대입
+	= new WebSocket('ws://192.168.17.94:8080/jspweb/chating/'+mid);
+	// 아래에서 구현 메소드를 객체에 대입 
 	clientsocket.onopen = function(e){ onopen(e) }
 	clientsocket.onclose = function(e){ onclose(e) }
 	clientsocket.onmessage = function(e){ onmessage(e) }

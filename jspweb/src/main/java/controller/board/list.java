@@ -40,10 +40,9 @@ public class list extends HttpServlet {
 		
 		//전체페이지수  vs  검색된 게시물 수
 		int totalsize = boardDao.getInstance().gettotalsize();
-		
 		int totalpage = 0;
-		if(totalsize % listsize == 0) totalpage = totalsize / listsize;	// 나머지가 없으면
-		else totalpage = totalsize / listsize+1;	// 나머지가 존재하면 나머지를 표시할 페이지+1
+		if( totalsize % listsize == 0 ) totalpage = totalsize / listsize;	// 나머지가 없으면
+		else totalpage = totalsize / listsize + 1;
 		
 		System.out.println(totalpage);
 		int page = Integer.parseInt(request.getParameter("page"));
@@ -73,6 +72,7 @@ public class list extends HttpServlet {
 		
 		//페이징 처리에 필요한 정보담는 JSONObject
 		JSONObject boards = new JSONObject();
+		
 		//전체 체이지수 계산
 		
 		// 2. 전체 게시물 호출 vs 검색된 게시물 호출

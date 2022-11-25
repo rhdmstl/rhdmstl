@@ -89,7 +89,7 @@ document.querySelector('.btnlike').addEventListener('click' , (e)=>{
       alert('로그인후 가능한 기능입니다.')
       return;
    }
-   // 2. 찜하기 등록 혹은 삭제 
+   // 2. 찜하기 등록 혹은 삭제 *********************************************
    $.ajax({
       url : "/jspweb/product/plike",
       type : "post",
@@ -106,7 +106,7 @@ document.querySelector('.btnlike').addEventListener('click' , (e)=>{
          }
       }
          
-   })
+   })  // 2. 찜하기 등록 혹은 삭제 *********************************************
 })
 
 // 장바구니 버튼을 눌렀을때

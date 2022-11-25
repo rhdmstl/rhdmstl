@@ -34,25 +34,32 @@ public class bupdate extends HttpServlet {
 		String uploadpath = request.getSession().getServletContext().getRealPath("/upload");
 		
 		MultipartRequest multi = new MultipartRequest( request,uploadpath,1024*1024*10,"UTF-8",new DefaultFileRenamePolicy());
+		System.out.println("포스트멀티"+multi);
 		
 		//요청
 		String btitle = multi.getParameter("btitle"); //수정제목
 		String bcontent = multi.getParameter("bcontent");	//수정내용
 		String bfile= multi.getFilesystemName("bfile");	//수정파일
+		System.out.println("요청확인"+btitle);
+		System.out.println("요청확인"+bcontent);
+		System.out.println("요청확인"+bfile);
 		
 		//수정할 게시물의 번호
 		int bno = (Integer)request.getSession().getAttribute("bno");
+		System.out.println("수정확인"+bno);
 		
 		//수정되기전 세기물 정보 호출
 		BoardDto dto = boardDao.getInstance().getboard(bno);
+		System.out.println("수정전게시물"+dto);
 		
 		//기존첨부파일 변경여부 판다
 		boolean bfilechange = true;
-		
+		System.out.println("파일변경"+bfilechange);
 		if(bfile == null) {
 			//수정시 첨부파일 등록 없을 경우[기존첨부파일 호출
 			bfile = boardDao.getInstance().getboard(bno).getBfile();
 		} 
+		System.out.println("수정확인"+bfile);
 		
 		//dao처리 [새로운 첨부파일이 있든없든 무조건 업데이트]
 		boolean result = boardDao.getInstance().bupdate(bno,btitle,bcontent,bfile);
@@ -66,5 +73,6 @@ public class bupdate extends HttpServlet {
 		}
 		//결과 반환
 		response.getWriter().print(result);
+		System.out.println("업데이트 확인 : "+result);
 	}
 }
